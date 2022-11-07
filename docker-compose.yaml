@@ -1,3 +1,5 @@
+---
+
 version: '3.9'
 
 services:
@@ -47,3 +49,5 @@ networks:
 
 volumes:
   ui_data:
+
+...

@@ -1,6 +1,4 @@
--include .env
-
-CURRENT_DIR ?= $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+export DOCKER_BUILDKIT ?= 1
 DOCKER_COMPOSE ?= docker-compose
 BUILDER_IMAGE ?= wayofdev/build-deps:alpine-latest
 
@@ -57,7 +55,7 @@ env: ## Generate .env file from example
 	cp -f .env.example .env
 .PHONY: env
 
-cert-install:
+cert-install: ## Run mkcert to install CA into system storage and generate default certs for traefik
 	mkcert -install
 	bash mkcert.sh
 .PHONY: cert-install

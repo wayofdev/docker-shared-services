@@ -1,3 +1,5 @@
+---
+
 providers:
   docker:
     exposedByDefault: false
@@ -32,3 +34,5 @@ tls:
       defaultCertificate:
         certFile: /etc/traefik/cert.pem
         keyFile: /etc/traefik/key.pem
+
+...
