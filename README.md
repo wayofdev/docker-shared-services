@@ -14,10 +14,10 @@
 <div align="center">
 <a href="https://actions-badge.atrox.dev/wayofdev/docker-shared-services/goto"><img alt="Build Status" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fwayofdev%2Fdocker-shared-services%2Fbadge&style=flat-square"/></a>
 <a href="https://github.com/wayofdev/docker-shared-services/tags"><img src="https://img.shields.io/github/v/tag/wayofdev/docker-shared-services?sort=semver&style=flat-square" alt="Latest Version"></a>
-<a href="https://hub.docker.com/repository/docker/wayofdev/php-prod"><img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/wayofdev/php-prod?style=flat-square"></a>
 <a href="LICENSE"><img src="https://img.shields.io/github/license/wayofdev/docker-shared-services.svg?style=flat-square&color=blue" alt="Software License"/></a>
 <a href="#"><img alt="Commits since latest release" src="https://img.shields.io/github/commits-since/wayofdev/docker-shared-services/latest?style=flat-square"></a>
 </div>
+
 
 <br>
 
