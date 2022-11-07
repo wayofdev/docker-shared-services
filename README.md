@@ -109,6 +109,13 @@ This repository configures Traefik to run together with, installed in system, dn
    $ make up
    ```
 
+6. Check that everything works:
+
+   ```bash
+   $ make ps
+   $ make logs
+   ```
+
 <br>
 
 ### → Outcome
