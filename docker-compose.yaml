@@ -1,0 +1,49 @@
+version: '3.9'
+
+services:
+  router:
+    image: traefik:2.9.4
+    container_name: router
+    restart: on-failure
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik/conf/traefik.yml:/etc/traefik/traefik.yml
+      - ./traefik/certs/cert.pem:/etc/traefik/cert.pem
+      - ./traefik/certs/key.pem:/etc/traefik/key.pem
+
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.router.rule=Host(`router${SHARED_DOMAIN_SEGMENT}.docker`)
+      - traefik.http.routers.router.entrypoints=websecure
+      - traefik.http.services.router.loadbalancer.server.port=8080
+      - traefik.http.routers.router.tls=true
+
+  ui:
+    image: portainer/portainer-ce:2.16.0-alpine
+    container_name: ui
+    restart: on-failure
+    ports:
+      - "9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ui_data:/data
+    command: "-H unix:///var/run/docker.sock"
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.ui.rule=Host(`ui${SHARED_DOMAIN_SEGMENT}.docker`)
+      - traefik.http.routers.ui.entrypoints=websecure
+      - traefik.http.services.ui.loadbalancer.server.port=9000
+      - traefik.http.routers.ui.tls=true
+
+networks:
+  default:
+    name: ss_shared_network
+    ipam:
+      config:
+        - subnet: 172.100.61.1/24
+
+volumes:
+  ui_data:

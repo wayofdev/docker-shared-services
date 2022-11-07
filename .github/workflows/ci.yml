@@ -1,0 +1,47 @@
+---
+
+name: CI
+
+on:  # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - 'master'
+    tags:
+      - 'v*.*.*'
+  pull_request:
+    branches:
+      - 'master'
+  release:
+    types:
+      - 'created'
+  schedule:
+    # Every Sunday at 05:10
+    - cron: '10 5 * * 0'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os_name: ['alpine']
+    steps:
+      - uses: e1himself/goss-installation-action@v1.1.0
+
+      - name: Checkout
+        uses: actions/checkout@v3.1.0
+
+      ### For Cross Platform OSX builds uncomment these lines
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+        with:
+          platforms: arm64
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+        with:
+          install: true
+
+      - name: Run dcgoss tests
+        run: make test

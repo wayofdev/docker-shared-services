@@ -1,0 +1,5 @@
+.idea
+docker-compose.override.yaml
+.DS_Store
+.env
+traefik/certs/*
