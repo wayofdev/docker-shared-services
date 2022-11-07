@@ -53,7 +53,7 @@ This repository configures Traefik to run together with, installed in system, dn
 
 <br>
 
-## ⚙️ How to Use
+## 💻 Usage
 
 ### → Instructions
 
