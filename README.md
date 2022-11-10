@@ -73,8 +73,8 @@ This repository configures Traefik to run together with, installed in system, dn
 
    Leave blank `SHARED_DOMAIN_SEGMENT`, to run shared services under first level domain, example:
 
-   * router.docker, 
-   * pg-admin.docker, 
+   * router.docker,
+   * pg-admin.docker,
    * ui.docker
    * etc.
 
@@ -158,10 +158,10 @@ This repository was created in **2022** by [lotyp / wayofdev](https://github.com
 
 ## 🫡 Contributors
 
-<img align="left" src="https://img.shields.io/github/contributors-anon/wayofdev/docker-shared-services?style=for-the-badge"/>
+<img align="left" src="https://img.shields.io/github/contributors-anon/wayofdev/docker-shared-services?style=for-the-badge" alt="Contributors"/>
 
 <a href="https://github.com/wayofdev/docker-nginx/graphs/contributors">
-  <img src="https://opencollective.com/wod/contributors.svg?width=890&button=false">
+  <img src="https://opencollective.com/wod/contributors.svg?width=890&button=false" alt="Contributors">
 </a>
 
 <br>

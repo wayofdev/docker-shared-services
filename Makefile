@@ -1,5 +1,15 @@
+-include .env
+
+ifeq ($(COMPOSE_PROJECT_NAME),)
+	COMPOSE_PROJECT_NAME = "ss"
+endif
+
 export DOCKER_BUILDKIT ?= 1
-DOCKER_COMPOSE ?= docker-compose
+export COMPOSE_PROJECT_NAME_SLUG = $(subst $e.,-,$(COMPOSE_PROJECT_NAME))
+export COMPOSE_PROJECT_NAME_SAFE = $(subst $e.,_,$(COMPOSE_PROJECT_NAME))
+
+DOCKER ?= docker
+DOCKER_COMPOSE ?= docker compose -p $(COMPOSE_PROJECT_NAME_SAFE)
 BUILDER_IMAGE ?= wayofdev/build-deps:alpine-latest
 
 ifneq ($(TERM),)
@@ -32,7 +42,7 @@ help:
 	@echo 'Management commands for package:'
 	@echo 'Usage:'
 	@echo '    ${MAKE_CMD_COLOR}make${RST}                       Builds default image and then runs dgoss tests'
-	@grep -E '^[a-zA-Z_0-9%-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "    ${MAKE_CMD_COLOR}make %-21s${RST} %s\n", $$1, $$2}'
+	@grep -E '^[a-zA-Z_0-9%-]+:.*?## .*$$' Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "    ${MAKE_CMD_COLOR}make %-21s${RST} %s\n", $$1, $$2}'
 	@echo
 	@echo '    📑 Logs are stored in      $(MAKE_LOGFILE)'
 	@echo
@@ -76,7 +86,9 @@ stop: ## Stops all containers, without removing them
 .PHONY: stop
 
 restart: ## Restart all containers, running in this project
-	$(DOCKER_COMPOSE) restart
+	# $(DOCKER_COMPOSE) restart
+	$(DOCKER_COMPOSE) down
+	$(DOCKER_COMPOSE) up
 .PHONY: restart
 
 logs: ## Show logs for running containers in this project
@@ -92,6 +104,7 @@ pull: ## Pull upstream images, specified in docker-compose.yml file
 .PHONY: pull
 
 clean:
+	# $(DOCKER_COMPOSE) down -v
 	$(DOCKER_COMPOSE) rm --force --stop
 .PHONY: clean
 
