@@ -42,7 +42,7 @@ services:
 
 networks:
   default:
-    name: ${COMPOSE_PROJECT_NAME}_network
+    name: ${COMPOSE_PROJECT_NAME_SAFE}_network
     ipam:
       config:
         - subnet: 172.100.61.1/24

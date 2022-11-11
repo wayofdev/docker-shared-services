@@ -12,6 +12,12 @@ DOCKER ?= docker
 DOCKER_COMPOSE ?= docker compose -p $(COMPOSE_PROJECT_NAME_SAFE)
 BUILDER_IMAGE ?= wayofdev/build-deps:alpine-latest
 
+EXPORT_VARS = '\
+	$${COMPOSE_PROJECT_NAME_SLUG} \
+	$${COMPOSE_PROJECT_NAME_SAFE}'
+
+.EXPORT_ALL_VARIABLES:
+
 ifneq ($(TERM),)
 	BLACK := $(shell tput setaf 0)
 	RED := $(shell tput setaf 1)
@@ -41,7 +47,7 @@ default: all
 help:
 	@echo 'Management commands for package:'
 	@echo 'Usage:'
-	@echo '    ${MAKE_CMD_COLOR}make${RST}                       Builds default image and then runs dgoss tests'
+	@echo '    ${MAKE_CMD_COLOR}make${RST}                       Creates containers, spins up project'
 	@grep -E '^[a-zA-Z_0-9%-]+:.*?## .*$$' Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "    ${MAKE_CMD_COLOR}make %-21s${RST} %s\n", $$1, $$2}'
 	@echo
 	@echo '    📑 Logs are stored in      $(MAKE_LOGFILE)'
