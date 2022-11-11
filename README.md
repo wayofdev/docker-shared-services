@@ -126,9 +126,9 @@ Services will be running under shared docker network, called `ss_shared_network`
 
 ![Alt text](assets/traefik.png?raw=true "Title")
 
-**Portrainer** — https://ui.wod.docker
+**Portrainer** — https://ui.wod.docker or https://ui.docker
 
-**Pg-admin** (if docker-compose.override was enabled) — https://pg-admin.wod.docker
+**Pg-admin** (if docker-compose.override was enabled) — https://pg-admin.wod.docker or https://pg-admin.docker
 
 <br>
 
