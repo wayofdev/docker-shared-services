@@ -1,7 +1,7 @@
 -include .env
 
 ifeq ($(COMPOSE_PROJECT_NAME),)
-	COMPOSE_PROJECT_NAME = "ss"
+	COMPOSE_PROJECT_NAME=ss
 endif
 
 export DOCKER_BUILDKIT ?= 1
