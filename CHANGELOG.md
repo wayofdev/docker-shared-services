@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.1](https://github.com/wayofdev/docker-shared-services/compare/v1.1.0...v1.1.1) (2022-11-11)
+
+
+### Bug Fixes
+
+* network name should be underlined ([1c5a886](https://github.com/wayofdev/docker-shared-services/commit/1c5a88678fe17d5de193a9218ccb943c43fcdacb))
+
+
+### Documentation
+
+* more description ([39859af](https://github.com/wayofdev/docker-shared-services/commit/39859afe4b10c30de2f2a7d0f1f3f5d532a66dcd))
+
 ## [1.1.0](https://github.com/wayofdev/docker-shared-services/compare/v1.0.0...v1.1.0) (2022-11-10)
 
 
