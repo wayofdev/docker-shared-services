@@ -71,27 +71,51 @@ This repository configures Traefik to run together with, installed in system, dn
 
    Edit created .env file, if it is needed. Probably you will want to change default domain.
 
-   Leave blank `SHARED_DOMAIN_SEGMENT`, to run shared services under first level domain, example:
+   
 
-   * router.docker,
-   * pg-admin.docker,
-   * ui.docker
-   * etc.
+   **with blank shared domain segment**:
 
-   Or set segment, to run them under subdomain: `SHARED_DOMAIN_SEGMENT=.wod` Services will run under that segment, example:
+   Leave blank `SHARED_DOMAIN_SEGMENT`, to run shared services under first level domain, example map:
 
-   * router**.wod**.docker
-   * pg-admin**.wod**.docker
-   * ui**.wod**.docker
-   * etc
+   | Address         |
+   | --------------- |
+   | router.docker   |
+   | pg-admin.docker |
+   | ui.docker       |
+   | etc.            |
+
+   
+
+   **with default or custom shared domain segment:**
+
+   Set segment, to run shared services under subdomain: `SHARED_DOMAIN_SEGMENT=.wod` 
+
+   Services will run under that segment, example map:
+
+   | Address                 |
+   | ----------------------- |
+   | router**.wod**.docker   |
+   | pg-admin**.wod**.docker |
+   | ui**.wod**.docker       |
+   | etc.                    |
+
+   
+
+   **SSL certificates:**
 
    Don't forget to include first level domains into `TLS_DOMAINS` variable. Default certificates will be created for these domains and wildcards:
 
-   * ui.docker — Included as fallback, if `SHARED_DOMAIN_SEGMENT` was left blank
-   * router.docker — Included as fallback, if `SHARED_DOMAIN_SEGMENT` was left blank
-   * pg-admin.docker — Included as fallback, if `SHARED_DOMAIN_SEGMENT` was left blank
-   * *.wod.docker — All subdomains under this wildcard. Only one level of nesting will work in most of the browsers
-   * *.wod.mac — Same as above wildcard
+   | SSL certificate      | Comments                                                     |
+   | -------------------- | ------------------------------------------------------------ |
+   | ui.docker            | Included as fallback, if `SHARED_DOMAIN_SEGMENT` was left blank. |
+   | router.docker        | Included as fallback, if `SHARED_DOMAIN_SEGMENT` was left blank. |
+   | pg-admin.docker      | Included as fallback, if `SHARED_DOMAIN_SEGMENT` was left blank. |
+   | *.wod.docker         | All subdomains under this wildcard. **Only one level of nesting **will work in most of the browsers****. |
+   | *.wod.mac            | All subdomains under this wildcard.                          |
+   | *.starter.wod.docker | For default template, generated from [laravel-starter-tpl](https://github.com/wayofdev/laravel-starter-tpl) |
+   | *.starter.wod.mac    | Alternative for previous.                                    |
+
+   
 
 3. Install root certificate into system and generate default certs:
    ```bash
