@@ -92,9 +92,7 @@ stop: ## Stops all containers, without removing them
 .PHONY: stop
 
 restart: ## Restart all containers, running in this project
-	# $(DOCKER_COMPOSE) restart
-	$(DOCKER_COMPOSE) down
-	$(DOCKER_COMPOSE) up
+	$(DOCKER_COMPOSE) restart
 .PHONY: restart
 
 logs: ## Show logs for running containers in this project

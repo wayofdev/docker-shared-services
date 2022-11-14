@@ -78,7 +78,7 @@ This repository configures Traefik to run together with, installed in system, dn
    * ui.docker
    * etc.
 
-   Or set segment, to run them under subdomain: `SHARED_DOMAIN_SEGMENT=".wod"` Services will run under that segment, example:
+   Or set segment, to run them under subdomain: `SHARED_DOMAIN_SEGMENT=.wod` Services will run under that segment, example:
 
    * router**.wod**.docker
    * pg-admin**.wod**.docker
