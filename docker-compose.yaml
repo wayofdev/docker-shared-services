@@ -4,7 +4,7 @@ version: '3.9'
 
 services:
   router:
-    image: traefik:2.9.4
+    image: traefik:2.9
     container_name: router
     restart: on-failure
     ports:
@@ -21,8 +21,6 @@ services:
       - traefik.http.routers.router.entrypoints=websecure
       - traefik.http.services.router.loadbalancer.server.port=8080
       - traefik.http.routers.router.tls=true
-    healthcheck:
-      test: ./traefik healthcheck --ping
 
   ui:
     image: portainer/portainer-ce:2.16.0-alpine

@@ -105,15 +105,13 @@ This repository configures Traefik to run together with, installed in system, dn
 
    Don't forget to include first level domains into `TLS_DOMAINS` variable. Default certificates will be created for these domains and wildcards:
 
-   | SSL certificate      | Comments                                                     |
-   | -------------------- | ------------------------------------------------------------ |
-   | ui.docker            | Included as fallback, if `SHARED_DOMAIN_SEGMENT` was left blank. |
-   | router.docker        | Included as fallback, if `SHARED_DOMAIN_SEGMENT` was left blank. |
-   | pg-admin.docker      | Included as fallback, if `SHARED_DOMAIN_SEGMENT` was left blank. |
-   | *.wod.docker         | All subdomains under this wildcard. **Only one level of nesting **will work in most of the browsers****. |
-   | *.wod.mac            | All subdomains under this wildcard.                          |
-   | *.tpl.wod.docker | For default template, generated from [laravel-starter-tpl](https://github.com/wayofdev/laravel-starter-tpl) |
-   | *.tpl.wod.mac    | Alternative for previous.                                    |
+| SSL certificate      | Comments                                                     |
+| -------------------- | ------------------------------------------------------------ |
+| ui.docker            | Included as fallback, if `SHARED_DOMAIN_SEGMENT` was left blank. |
+| router.docker        | Included as fallback, if `SHARED_DOMAIN_SEGMENT` was left blank. |
+| pg-admin.docker      | Included as fallback, if `SHARED_DOMAIN_SEGMENT` was left blank. |
+| *.wod.docker         | All subdomains under this wildcard. **Only one level of nesting **will work in most of the browsers****. |
+| *.tpl.wod.docker | For default template, generated from [laravel-starter-tpl](https://github.com/wayofdev/laravel-starter-tpl) |
 
 
 

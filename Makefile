@@ -13,6 +13,7 @@ DOCKER_COMPOSE ?= docker compose -p $(COMPOSE_PROJECT_NAME_SAFE)
 BUILDER_IMAGE ?= wayofdev/build-deps:alpine-latest
 
 EXPORT_VARS = '\
+	$${SHARED_DOMAIN_SEGMENT} \
 	$${COMPOSE_PROJECT_NAME_SLUG} \
 	$${COMPOSE_PROJECT_NAME_SAFE}'
 
