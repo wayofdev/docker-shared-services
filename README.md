@@ -94,9 +94,9 @@ This repository configures Traefik to run together with, installed in system, dn
 
    | Address                 |
    | ----------------------- |
-   | router**.wod**.docker   |
-   | pg-admin**.wod**.docker |
-   | ui**.wod**.docker       |
+   | router.__wod__.docker   |
+   | pg-admin.__wod__.docker |
+   | ui.__wod__.docker       |
    | etc.                    |
 
    
