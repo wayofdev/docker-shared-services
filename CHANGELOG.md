@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.2](https://github.com/wayofdev/docker-shared-services/compare/v1.1.1...v1.1.2) (2022-11-14)
+
+
+### Bug Fixes
+
+* remove quotes for domain namespace ([2ea50cb](https://github.com/wayofdev/docker-shared-services/commit/2ea50cb63f45848f87c003d0cd1229af3bf59029))
+* remove quotes, as Makefile will add them as chars ([678f511](https://github.com/wayofdev/docker-shared-services/commit/678f511ae2fbb1bc26fcc3b039d15b41adfc9885))
+
+
+### Documentation
+
+* bold domains not showing as bold ([6c50c38](https://github.com/wayofdev/docker-shared-services/commit/6c50c380fcb8762cfea62f4662580de7bee2d2d0))
+* formatting ([aeb897c](https://github.com/wayofdev/docker-shared-services/commit/aeb897ce4ecd8ecd7fc71b399120cc4e65bd3d2c))
+
 ## [1.1.1](https://github.com/wayofdev/docker-shared-services/compare/v1.1.0...v1.1.1) (2022-11-11)
 
 
