@@ -15,13 +15,14 @@ services:
       - ./traefik/conf/traefik.yml:/etc/traefik/traefik.yml
       - ./traefik/certs/cert.pem:/etc/traefik/cert.pem
       - ./traefik/certs/key.pem:/etc/traefik/key.pem
-
     labels:
       - traefik.enable=true
       - traefik.http.routers.router.rule=Host(`router${SHARED_DOMAIN_SEGMENT}.docker`)
       - traefik.http.routers.router.entrypoints=websecure
       - traefik.http.services.router.loadbalancer.server.port=8080
       - traefik.http.routers.router.tls=true
+    healthcheck:
+      test: ./traefik healthcheck --ping
 
   ui:
     image: portainer/portainer-ce:2.16.0-alpine
@@ -39,6 +40,12 @@ services:
       - traefik.http.routers.ui.entrypoints=websecure
       - traefik.http.services.ui.loadbalancer.server.port=9000
       - traefik.http.routers.ui.tls=true
+    healthcheck:
+      test: "wget --no-verbose --tries=1 --spider --no-check-certificate http://localhost:9000 || exit 1"
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
 
 networks:
   default:
