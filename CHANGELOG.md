@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.2.0](https://github.com/wayofdev/docker-shared-services/compare/v1.1.2...v1.2.0) (2022-11-22)
+
+
+### Features
+
+* add health checks for services ([87f6879](https://github.com/wayofdev/docker-shared-services/commit/87f68798d4f5723261bc48623986462b2f449d82))
+* add labels and auto-sync ([76a505b](https://github.com/wayofdev/docker-shared-services/commit/76a505b610e9635ae6c838e4cd09c4e70eba3533))
+
+
+### Bug Fixes
+
+* not working health check ([34f75d8](https://github.com/wayofdev/docker-shared-services/commit/34f75d8b3b466579b61699cbeba1f87fb439dbdc))
+* traefik config ([76a505b](https://github.com/wayofdev/docker-shared-services/commit/76a505b610e9635ae6c838e4cd09c4e70eba3533))
+
+
+### Documentation
+
+* changing default hosts ([9623fff](https://github.com/wayofdev/docker-shared-services/commit/9623fff2aeeefa3199286a64955ceed272001f4f))
+
+
+### Miscellaneous
+
+* fix table in docs ([219feab](https://github.com/wayofdev/docker-shared-services/commit/219feab37438d602e84be8e05ef6e033da37cbac))
+
 ## [1.1.2](https://github.com/wayofdev/docker-shared-services/compare/v1.1.1...v1.1.2) (2022-11-14)
 
 
