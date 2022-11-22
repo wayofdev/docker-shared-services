@@ -1,0 +1,26 @@
+---
+
+name: Sync changes from upstream template
+
+on:
+  # Trigger At 00:00 on each 1st day of month
+  schedule:
+    - cron:  "0 0 1 * *"
+  # Manual trigger
+  workflow_dispatch:
+
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.1.0
+
+      - name: Sync changes from upstream template
+        uses: AndreasAugustin/actions-template-sync@v0.4.2-draft
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_repo_path: wayofdev/docker-shared-services
+          upstream_branch: master
+          pr_labels: "type: maintenance"
