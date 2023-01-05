@@ -30,7 +30,7 @@ jobs:
       - uses: e1himself/goss-installation-action@v1.1.0
 
       - name: Checkout
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.3.0
 
       ### For Cross Platform OSX builds uncomment these lines
       - name: Set up QEMU
