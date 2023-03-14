@@ -1,5 +1,8 @@
 ---
 
+global:
+  sendAnonymousUsage: false
+
 providers:
   docker:
     exposedByDefault: false
@@ -22,6 +25,7 @@ entryPoints:
         entryPoint:
           to: websecure
           scheme: https
+
   websecure:
     address: ':443'
 

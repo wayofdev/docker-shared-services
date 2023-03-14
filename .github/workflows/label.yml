@@ -5,7 +5,7 @@
 # file with configuration.  For more information, see:
 # https://github.com/actions/labeler/blob/master/README.md
 
-name: Add labels
+name: 🏷️ Add labels
 
 on:  # yamllint disable-line rule:truthy
   pull_request:
@@ -14,7 +14,7 @@ jobs:
   label:
     runs-on: ubuntu-latest
     steps:
-      - name: Apply labels
-        uses: actions/labeler@v2
+      - name: 🏷️ Apply labels
+        uses: actions/labeler@v4
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"

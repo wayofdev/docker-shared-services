@@ -1,7 +1,5 @@
 ---
 
-name: CI
-
 on:  # yamllint disable-line rule:truthy
   push:
     branches:
@@ -18,30 +16,32 @@ on:  # yamllint disable-line rule:truthy
     # Every Sunday at 05:10
     - cron: '10 5 * * 0'
 
+name: 🔍 Continuous integration
+
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        os_name: ['alpine']
     steps:
-      - uses: e1himself/goss-installation-action@v1.1.0
+      - name: 📦 Install goss
+        uses: e1himself/goss-installation-action@v1.1.0
 
-      - name: Checkout
-        uses: actions/checkout@v3.1.0
+      - name: 📦 Check out the codebase
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       ### For Cross Platform OSX builds uncomment these lines
-      - name: Set up QEMU
+      - name: 🖥️ Set up QEMU
         uses: docker/setup-qemu-action@v2
         with:
           platforms: arm64
 
-      - name: Set up Docker Buildx
+      - name: 🚀 Set up Docker BuildX
         uses: docker/setup-buildx-action@v2
         with:
           install: true
 
-      - name: Run dcgoss tests
+      - name: 🧪 Run dcgoss tests
         run: make test
