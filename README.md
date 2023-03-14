@@ -40,7 +40,7 @@ This repository configures Traefik to run together with, installed in system, dn
 
 <br>
 
-## 📑 Requirements
+## 🚩 Requirements
 
 * **macOS** Monterey or **Linux**
 * **Docker** 20.10 or newer
@@ -55,9 +55,9 @@ This repository configures Traefik to run together with, installed in system, dn
 
 ## 💻 Usage
 
-### → Instructions
+### → Cloning and setting up envs
 
-1. Download repository:
+1. Clone repository:
 
    ```bash
    $ git clone git@github.com:wayofdev/docker-shared-services.git
@@ -69,13 +69,13 @@ This repository configures Traefik to run together with, installed in system, dn
    $ make env
    ```
 
-   Edit created .env file, if it is needed. Probably you will want to change default domain.
+   Edit the created `.env` file if necessary. You may want to change the default domain.
 
+<br>
 
+### → Running with a blank shared domain segment:
 
-   **with blank shared domain segment**:
-
-   Leave blank `SHARED_DOMAIN_SEGMENT`, to run shared services under first level domain, example map:
+Leave the `SHARED_DOMAIN_SEGMENT` blank to run shared services under the first level domain. For example:
 
    | Address         |
    | --------------- |
@@ -84,13 +84,11 @@ This repository configures Traefik to run together with, installed in system, dn
    | ui.docker       |
    | etc.            |
 
+<br>
 
+### → Running with a default or custom shared domain segment:
 
-   **with default or custom shared domain segment:**
-
-   Set segment, to run shared services under subdomain: `SHARED_DOMAIN_SEGMENT=.wod`
-
-   Services will run under that segment, example map:
+Set the segment to run shared services under a subdomain: `SHARED_DOMAIN_SEGMENT=.wod`. Services will run under that segment. For example:
 
    | Address                 |
    | ----------------------- |
@@ -99,11 +97,11 @@ This repository configures Traefik to run together with, installed in system, dn
    | ui.__wod__.docker       |
    | etc.                    |
 
+<br>
 
+### → SSL certificates:
 
-   **SSL certificates:**
-
-   Don't forget to include first level domains into `TLS_DOMAINS` variable. Default certificates will be created for these domains and wildcards:
+Don't forget to include first level domains into the `TLS_DOMAINS` variable. Default certificates will be created for these domains and wildcards:
 
 | SSL certificate      | Comments                                                     |
 | -------------------- | ------------------------------------------------------------ |
@@ -113,25 +111,29 @@ This repository configures Traefik to run together with, installed in system, dn
 | *.wod.docker         | All subdomains under this wildcard. **Only one level of nesting **will work in most of the browsers****. |
 | *.tpl.wod.docker | For default template, generated from [laravel-starter-tpl](https://github.com/wayofdev/laravel-starter-tpl) |
 
+<br>
 
+### → Finishing:
 
-3. Install root certificate into system and generate default certs:
+1. Install root certificate into system and generate default certs:
+
    ```bash
    $ make cert-install
    ```
 
-4. (Optional) Enable docker-compose.override file to run extra services, like pg-admin and others:
+2. (Optional) Enable docker-compose.override file to run extra services, like pg-admin and others:
+
    ```bash
    $ make override
    ```
 
-5. Run this repository:
+3. Run this repository:
 
    ```bash
    $ make up
    ```
 
-6. Check that everything works:
+4. Check that everything works:
 
    ```bash
    $ make ps
