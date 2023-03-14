@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://github.com/wayofdev/docker-shared-services/compare/v1.3.0...v1.4.0) (2023-03-14)
+
+
+### Features
+
+* enable auto-merge ([335a94d](https://github.com/wayofdev/docker-shared-services/commit/335a94d0efdc0ec86bf352f63302e99820fa67d5))
+
+
+### Miscellaneous
+
+* **deps:** update portainer/portainer-ce docker tag to v2.17.1 ([392667a](https://github.com/wayofdev/docker-shared-services/commit/392667a0433ff3a16fc582ae4f2653233f4fc0e8))
+
 ## [1.3.0](https://github.com/wayofdev/docker-shared-services/compare/v1.2.0...v1.3.0) (2023-03-14)
 
 
