@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.3.0](https://github.com/wayofdev/docker-shared-services/compare/v1.2.0...v1.3.0) (2023-03-14)
+
+
+### Features
+
+* update workflow files ([47da695](https://github.com/wayofdev/docker-shared-services/commit/47da695f972fc90777be674c3a922c92d5d5a0ea))
+
+
+### Bug Fixes
+
+* certs directory should be present ([c0189d2](https://github.com/wayofdev/docker-shared-services/commit/c0189d20b5ed8d8b3efd68d0a5064c7a3244ee40))
+
+
+### Documentation
+
+* readme update ([2602b25](https://github.com/wayofdev/docker-shared-services/commit/2602b25ae99058d5b6aae317c2e2711a2a5dc720))
+
 ## [1.2.0](https://github.com/wayofdev/docker-shared-services/compare/v1.1.2...v1.2.0) (2022-11-22)
 
 
