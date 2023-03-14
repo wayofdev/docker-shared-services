@@ -7,13 +7,14 @@ on:  # yamllint disable-line rule:truthy
     branches:
       - master
 
-name: release-please
+name: 📦 Create release
 
 jobs:
-  release-please:
+  release:
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action@v3
+      - name: 🎉 Create release
+        uses: google-github-actions/release-please-action@v3
         id: release
         with:
           token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
