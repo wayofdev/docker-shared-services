@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.3](https://github.com/wayofdev/docker-shared-services/compare/v1.4.2...v1.4.3) (2023-03-23)
+
+
+### Miscellaneous
+
+* **deps:** update peter-evans/enable-pull-request-automerge action to v3 ([e236b15](https://github.com/wayofdev/docker-shared-services/commit/e236b15bd23cee1156eb6e598ecd801b5b924f36))
+
 ## [1.4.2](https://github.com/wayofdev/docker-shared-services/compare/v1.4.1...v1.4.2) (2023-03-21)
 
 
