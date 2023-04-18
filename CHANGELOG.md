@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.5](https://github.com/wayofdev/docker-shared-services/compare/v1.4.4...v1.4.5) (2023-04-18)
+
+
+### Miscellaneous
+
+* **deps:** update portainer/portainer-ce docker tag to v2.18.1 ([25d1e30](https://github.com/wayofdev/docker-shared-services/commit/25d1e30a0938139f9c0dd257e44ac9efe03abe2e))
+
 ## [1.4.4](https://github.com/wayofdev/docker-shared-services/compare/v1.4.3...v1.4.4) (2023-04-06)
 
 
