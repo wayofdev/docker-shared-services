@@ -58,7 +58,7 @@ help:
 	@echo '    🏢 ${YELLOW}Org                     wayofdev (github.com/wayofdev)${RST}'
 .PHONY: help
 
-all: env up
+all: hooks env up
 PHONY: all
 
 
