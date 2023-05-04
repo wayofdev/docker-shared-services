@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.9](https://github.com/wayofdev/docker-shared-services/compare/v1.4.8...v1.4.9) (2023-05-04)
+
+
+### Bug Fixes
+
+* actions ([bbfa709](https://github.com/wayofdev/docker-shared-services/commit/bbfa7099cb8d91c002c8039bdfed7604ac103e2b))
+
 ## [1.4.8](https://github.com/wayofdev/docker-shared-services/compare/v1.4.7...v1.4.8) (2023-05-01)
 
 
