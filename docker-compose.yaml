@@ -4,7 +4,7 @@ version: '3.9'
 
 services:
   router:
-    image: traefik:2.9.8
+    image: traefik:v2.10.1
     container_name: router
     restart: on-failure
     ports:
@@ -23,7 +23,7 @@ services:
       - traefik.http.routers.router.tls=true
 
   ui:
-    image: portainer/portainer-ce:2.16.0-alpine
+    image: portainer/portainer-ce:2.18.2-alpine
     container_name: ui
     restart: on-failure
     ports:

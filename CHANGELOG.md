@@ -1,5 +1,73 @@
 # Changelog
 
+## [1.4.8](https://github.com/wayofdev/docker-shared-services/compare/v1.4.7...v1.4.8) (2023-05-01)
+
+
+### Miscellaneous
+
+* **deps:** update portainer/portainer-ce docker tag to v2.18.2 ([0f9e5dd](https://github.com/wayofdev/docker-shared-services/commit/0f9e5dd43ff952aad370317d6b630419b995afcd))
+
+## [1.4.7](https://github.com/wayofdev/docker-shared-services/compare/v1.4.6...v1.4.7) (2023-04-27)
+
+
+### Miscellaneous
+
+* **deps:** update traefik docker tag to v2.10.1 ([5638520](https://github.com/wayofdev/docker-shared-services/commit/56385203e65b757cac25b5b98876af0224c0b46b))
+
+## [1.4.6](https://github.com/wayofdev/docker-shared-services/compare/v1.4.5...v1.4.6) (2023-04-25)
+
+
+### Miscellaneous
+
+* **deps:** update traefik docker tag to v2.10.0 ([ca75995](https://github.com/wayofdev/docker-shared-services/commit/ca75995528a544b72bda0ab9679606092622a55a))
+
+## [1.4.5](https://github.com/wayofdev/docker-shared-services/compare/v1.4.4...v1.4.5) (2023-04-18)
+
+
+### Miscellaneous
+
+* **deps:** update portainer/portainer-ce docker tag to v2.18.1 ([25d1e30](https://github.com/wayofdev/docker-shared-services/commit/25d1e30a0938139f9c0dd257e44ac9efe03abe2e))
+
+## [1.4.4](https://github.com/wayofdev/docker-shared-services/compare/v1.4.3...v1.4.4) (2023-04-06)
+
+
+### Miscellaneous
+
+* **deps:** update traefik docker tag to v2.9.10 ([88e12ae](https://github.com/wayofdev/docker-shared-services/commit/88e12ae105bc313a6d6c1c46679b7c5f071d80ba))
+
+## [1.4.3](https://github.com/wayofdev/docker-shared-services/compare/v1.4.2...v1.4.3) (2023-03-23)
+
+
+### Miscellaneous
+
+* **deps:** update peter-evans/enable-pull-request-automerge action to v3 ([e236b15](https://github.com/wayofdev/docker-shared-services/commit/e236b15bd23cee1156eb6e598ecd801b5b924f36))
+
+## [1.4.2](https://github.com/wayofdev/docker-shared-services/compare/v1.4.1...v1.4.2) (2023-03-21)
+
+
+### Miscellaneous
+
+* **deps:** update traefik docker tag to v2.9.9 ([da56591](https://github.com/wayofdev/docker-shared-services/commit/da565910a9a89bf2cfd6a8eb7160f5237cd4d159))
+
+## [1.4.1](https://github.com/wayofdev/docker-shared-services/compare/v1.4.0...v1.4.1) (2023-03-21)
+
+
+### Miscellaneous
+
+* **deps:** update andreasaugustin/actions-template-sync action to v0.8.0 ([ce5af80](https://github.com/wayofdev/docker-shared-services/commit/ce5af808fb89f1bc9e0e7d849ef2ebf289c5ca26))
+
+## [1.4.0](https://github.com/wayofdev/docker-shared-services/compare/v1.3.0...v1.4.0) (2023-03-14)
+
+
+### Features
+
+* enable auto-merge ([335a94d](https://github.com/wayofdev/docker-shared-services/commit/335a94d0efdc0ec86bf352f63302e99820fa67d5))
+
+
+### Miscellaneous
+
+* **deps:** update portainer/portainer-ce docker tag to v2.17.1 ([392667a](https://github.com/wayofdev/docker-shared-services/commit/392667a0433ff3a16fc582ae4f2653233f4fc0e8))
+
 ## [1.3.0](https://github.com/wayofdev/docker-shared-services/compare/v1.2.0...v1.3.0) (2023-03-14)
 
 
