@@ -1,13 +1,13 @@
 ---
 
-name: ♻️ Sync changes from upstream template
-
 on:
   # Trigger At 00:00 on each 1st day of month
   schedule:
     - cron:  "0 0 1 * *"
   # Manual trigger
   workflow_dispatch:
+
+name: ♻️ Sync changes from upstream template
 
 jobs:
   repo-sync:
@@ -26,3 +26,5 @@ jobs:
           source_repo_path: wayofdev/docker-shared-services
           upstream_branch: master
           pr_labels: "type: maintenance"
+
+...
