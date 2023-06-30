@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.11](https://github.com/wayofdev/docker-shared-services/compare/v1.4.10...v1.4.11) (2023-06-30)
+
+
+### Bug Fixes
+
+* gateway timeouts ([0483d74](https://github.com/wayofdev/docker-shared-services/commit/0483d74f263e82c36f23208ff30d0005747daa7c))
+
+
+### Miscellaneous
+
+* **deps:** update traefik docker tag to v2.10.3 ([f60baf6](https://github.com/wayofdev/docker-shared-services/commit/f60baf6c7614de6e405738a6d369264b8f3e0b84))
+
 ## [1.4.10](https://github.com/wayofdev/docker-shared-services/compare/v1.4.9...v1.4.10) (2023-05-22)
 
 
