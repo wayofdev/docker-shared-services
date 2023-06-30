@@ -21,6 +21,7 @@ services:
       - traefik.http.routers.router.entrypoints=websecure
       - traefik.http.services.router.loadbalancer.server.port=8080
       - traefik.http.routers.router.tls=true
+    network_mode: host
 
   ui:
     image: portainer/portainer-ce:2.18.3-alpine
