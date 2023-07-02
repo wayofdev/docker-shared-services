@@ -1,3 +1,5 @@
+---
+
 # this file is for the labeler workflow job
 # Documentation https://github.com/marketplace/actions/labeler
 
@@ -7,7 +9,6 @@
   - ./*.md
 
 "type: maintenance":
-  - .dependabot/*
   - .github/workflows/*
-  - app/tests/**/*
-  - tests/**/*
+
+...

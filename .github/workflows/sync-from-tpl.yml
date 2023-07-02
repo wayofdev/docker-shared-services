@@ -1,6 +1,6 @@
 ---
 
-on:
+on:  # yamllint disable-line rule:truthy
   # Trigger At 00:00 on each 1st day of month
   schedule:
     - cron:  "0 0 1 * *"

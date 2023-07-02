@@ -45,3 +45,5 @@ jobs:
 
       - name: 🧪 Run dcgoss tests
         run: make test
+
+...
