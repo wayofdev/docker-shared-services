@@ -13,15 +13,14 @@ name: 🤞 Auto merge release
 
 jobs:
   auto-merge:
-    if: github.actor == 'lotyp' && startsWith(github.head_ref, 'release-please--')
-    runs-on: ubuntu-latest
-    steps:
-      - name: 🤞 Auto-merge pull request
-        uses: peter-evans/enable-pull-request-automerge@v3
-        with:
-          pull-request-number: ${{ github.event.pull_request.number }}
-          merge-method: merge
-          # to trigger other workflows, pass PAT token instead of GITHUB_TOKEN
-          token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+    uses: wayofdev/gh-actions/.github/workflows/auto-merge-release.yml@master
+    with:
+      os: ubuntu-latest
+      pull-request-number: ${{ github.event.pull_request.number }}
+      actor: lotyp
+      merge-method: merge
+    secrets:
+      # to trigger other workflows, pass PAT token instead of GITHUB_TOKEN
+      token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
 
 ...
