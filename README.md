@@ -48,8 +48,9 @@ This repository configures Traefik to run together with, installed in system, dn
 * Installed [mkcert](https://github.com/FiloSottile/mkcert) binary in system
   * See full installation instructions in their official [README.md](https://github.com/FiloSottile/mkcert)
   * Quick installation on macOS: `brew install mkcert nss`
-* Installed and configured [dnsmasq](https://thekelleys.org.uk/dnsmasq/doc.html) daemon
-  * Can be installed and configured automatically via our own [ansible-role-dnsmasq](https://github.com/wayofdev/ansible-role-dnsmasq)
+* ~~Installed and configured [dnsmasq](https://thekelleys.org.uk/dnsmasq/doc.html) daemon~~
+  * ~~Can be installed and configured automatically via our own [ansible-role-dnsmasq](https://github.com/wayofdev/ansible-role-dnsmasq)~~
+  * DNSMasq service now is shipped and configured with this repository.
 
 <br>
 
@@ -180,7 +181,7 @@ This repository was created in **2022** by [lotyp / wayofdev](https://github.com
 
 <br>
 
-## 🫡 Contributors
+## 🫡 Supporters
 
 <img align="left" src="https://img.shields.io/github/contributors-anon/wayofdev/docker-shared-services?style=for-the-badge" alt="Contributors"/>
 
