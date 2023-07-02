@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.0](https://github.com/wayofdev/docker-shared-services/compare/v1.4.11...v1.5.0) (2023-07-02)
+
+
+### Features
+
+* move to reusable github workflows ([5bb40d3](https://github.com/wayofdev/docker-shared-services/commit/5bb40d30ab301282a67daa48a46dfd866b1904ee))
+* use docker based dnsmasq instead of ansible-dnsmasq-role ([8c94c3f](https://github.com/wayofdev/docker-shared-services/commit/8c94c3fabdb60962dff08cafaece0e75e17b7e04))
+
+
+### Documentation
+
+* dnsmasq is not needed anymore ([6d2f2cd](https://github.com/wayofdev/docker-shared-services/commit/6d2f2cd381fcc40899016c98c346ab118f577a6b))
+
 ## [1.4.11](https://github.com/wayofdev/docker-shared-services/compare/v1.4.10...v1.4.11) (2023-06-30)
 
 
