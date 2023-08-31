@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.5](https://github.com/wayofdev/docker-shared-services/compare/v1.5.4...v1.5.5) (2023-08-31)
+
+
+### Miscellaneous
+
+* **deps:** update traefik docker tag to v2.10.4 ([38cb60a](https://github.com/wayofdev/docker-shared-services/commit/38cb60acdfacf405fce1e7812a9559d534fd14a8))
+
 ## [1.5.4](https://github.com/wayofdev/docker-shared-services/compare/v1.5.3...v1.5.4) (2023-08-31)
 
 
