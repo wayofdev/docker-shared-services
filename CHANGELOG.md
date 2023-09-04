@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.7](https://github.com/wayofdev/docker-shared-services/compare/v1.5.6...v1.5.7) (2023-09-04)
+
+
+### Miscellaneous
+
+* **deps:** update actions/checkout action to v4 ([12b6c6c](https://github.com/wayofdev/docker-shared-services/commit/12b6c6c222732b1bebd43c461c485055d34bdab0))
+
 ## [1.5.6](https://github.com/wayofdev/docker-shared-services/compare/v1.5.5...v1.5.6) (2023-09-03)
 
 
