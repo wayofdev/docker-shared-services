@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.9](https://github.com/wayofdev/docker-shared-services/compare/v1.5.8...v1.5.9) (2023-09-12)
+
+
+### Miscellaneous
+
+* **deps:** update docker/setup-buildx-action action to v3 ([81a81b7](https://github.com/wayofdev/docker-shared-services/commit/81a81b7baefbd2811493e98133a9de28d2290a32))
+
 ## [1.5.8](https://github.com/wayofdev/docker-shared-services/compare/v1.5.7...v1.5.8) (2023-09-12)
 
 
