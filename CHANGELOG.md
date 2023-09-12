@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.8](https://github.com/wayofdev/docker-shared-services/compare/v1.5.7...v1.5.8) (2023-09-12)
+
+
+### Miscellaneous
+
+* **deps:** update docker/setup-qemu-action action to v3 ([92022b8](https://github.com/wayofdev/docker-shared-services/commit/92022b8fe638c540e391ab788cc69703cee9fc53))
+
 ## [1.5.7](https://github.com/wayofdev/docker-shared-services/compare/v1.5.6...v1.5.7) (2023-09-04)
 
 
