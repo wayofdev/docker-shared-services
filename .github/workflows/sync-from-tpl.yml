@@ -20,7 +20,7 @@ jobs:
           token: ${{ secrets.WORKFLOW_TOKEN }}
 
       - name: ♻️ Sync changes from upstream template
-        uses: AndreasAugustin/actions-template-sync@5584bd1e260ef04a0dce76e1a802e31befd6f5c4 # v1.1.2
+        uses: AndreasAugustin/actions-template-sync@f9a1c8f5e3769f54d2fc0facd2b18e4db69a4463 # v1.1.3
         with:
           github_token: ${{ secrets.WORKFLOW_TOKEN }}
           source_repo_path: wayofdev/docker-shared-services
