@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.11](https://github.com/wayofdev/docker-shared-services/compare/v1.5.10...v1.5.11) (2023-09-20)
+
+
+### Miscellaneous
+
+* **deps:** update portainer/portainer-ce docker tag to v2.19.1 ([9de0f52](https://github.com/wayofdev/docker-shared-services/commit/9de0f52b2fbe49689d7382e30cbbd28ebb5d528a))
+
 ## [1.5.10](https://github.com/wayofdev/docker-shared-services/compare/v1.5.9...v1.5.10) (2023-09-16)
 
 
