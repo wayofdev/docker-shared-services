@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.12](https://github.com/wayofdev/docker-shared-services/compare/v1.5.11...v1.5.12) (2023-09-22)
+
+
+### Miscellaneous
+
+* **deps:** update actions/checkout digest to 8ade135 ([49228c4](https://github.com/wayofdev/docker-shared-services/commit/49228c4caf7eb9545158013b4b66d2793cc838f6))
+
 ## [1.5.11](https://github.com/wayofdev/docker-shared-services/compare/v1.5.10...v1.5.11) (2023-09-20)
 
 
