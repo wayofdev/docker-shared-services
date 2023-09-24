@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.14](https://github.com/wayofdev/docker-shared-services/compare/v1.5.13...v1.5.14) (2023-09-24)
+
+
+### Miscellaneous
+
+* **deps:** update andreasaugustin/actions-template-sync action to v1.1.8 ([ffd10f3](https://github.com/wayofdev/docker-shared-services/commit/ffd10f347e5ede5a61b34ae2d1932360b7119647))
+
 ## [1.5.13](https://github.com/wayofdev/docker-shared-services/compare/v1.5.12...v1.5.13) (2023-09-24)
 
 
