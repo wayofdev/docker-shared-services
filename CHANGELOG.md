@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.16](https://github.com/wayofdev/docker-shared-services/compare/v1.5.15...v1.5.16) (2023-10-19)
+
+
+### Miscellaneous
+
+* **deps:** update actions/checkout digest to b4ffde6 ([4cb3f7c](https://github.com/wayofdev/docker-shared-services/commit/4cb3f7ce57ed4da4d5020f64845988827069a485))
+
 ## [1.5.15](https://github.com/wayofdev/docker-shared-services/compare/v1.5.14...v1.5.15) (2023-10-11)
 
 
