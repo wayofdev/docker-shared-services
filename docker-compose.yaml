@@ -23,7 +23,7 @@ services:
       - traefik.http.routers.router.tls=true
 
   ui:
-    image: portainer/portainer-ce:2.20.0-alpine
+    image: portainer/portainer-ce:2.20.1-alpine
     container_name: ui
     restart: on-failure
     ports:
