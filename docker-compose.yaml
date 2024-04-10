@@ -4,7 +4,7 @@ version: '3.9'
 
 services:
   router:
-    image: traefik:2.11.0
+    image: traefik:2.11.1
     container_name: router
     restart: on-failure
     ports:
