@@ -197,12 +197,14 @@ You are more than welcome. Before contributing, kindly check our [contribution g
 ## 🫡 Contributors
 
 <p align="left">
-<a href="https://github.com/wayofdev/docker-shared-services/graphs/contributors">
-    <img align="left" src="https://img.shields.io/github/contributors-anon/wayofdev/docker-shared-services?style=for-the-badge" alt="Contributors Badge"/>
-</a>
-<br>
-<br>
+  <a href="https://github.com/wayofdev/docker-shared-services/graphs/contributors">
+      <img align="left" src="https://img.shields.io/github/contributors-anon/wayofdev/docker-shared-services?style=for-the-badge" alt="Contributors Badge"/>
+  </a>
+  <br>
 </p>
+
+<br>
+
 ## 🌐 Social Links
 
 * **Twitter:** Follow our organization [@wayofdev](https://twitter.com/intent/follow?screen_name=wayofdev) and the author [@wlotyp](https://twitter.com/intent/follow?screen_name=wlotyp).
@@ -212,7 +214,6 @@ You are more than welcome. Before contributing, kindly check our [contribution g
     <a href="https://discord.gg/CE3TcCC5vr" target="_blank"><img alt="Codecov" src="https://img.shields.io/discord/1228506758562058391?style=for-the-badge&logo=discord&labelColor=7289d9&logoColor=white&color=39456d"></a>
     <a href="https://x.com/intent/follow?screen_name=wayofdev" target="_blank"><img alt="Follow on Twitter (X)" src="https://img.shields.io/badge/-Follow-black?style=for-the-badge&logo=X"></a>
 </p>
-
 <br>
 
 ## ⚖️ License
