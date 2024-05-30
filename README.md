@@ -9,15 +9,17 @@
     <br>
     <br>
 </div>
-
 <div align="center">
 <a href="https://actions-badge.atrox.dev/wayofdev/docker-shared-services/goto"><img alt="Build Status" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fwayofdev%2Fdocker-shared-services%2Fbadge&style=flat-square&label=github%20actions"/></a>
 <a href="https://github.com/wayofdev/docker-shared-services/tags"><img src="https://img.shields.io/github/v/tag/wayofdev/docker-shared-services?sort=semver&style=flat-square&label=version" alt="Latest Stable Version"></a>
 <a href="LICENSE.md"><img src="https://img.shields.io/github/license/wayofdev/docker-shared-services.svg?style=flat-square&color=blue" alt="Software License"/></a>
 <a href="https://github.com/wayofdev/docker-shared-services/commits/master"><img src="https://img.shields.io/github/commits-since/wayofdev/docker-shared-services/latest?style=flat-square" alt="Commits since latest release"></a>
+<a href="https://discord.gg/CE3TcCC5vr" target="_blank"><img alt="Discord Link" src="https://img.shields.io/discord/1228506758562058391?style=flat-square&logo=discord&labelColor=7289d9&logoColor=white&color=39456d"></a>
+<a href="https://x.com/intent/follow?screen_name=wayofdev" target="_blank"><img alt="Follow on Twitter (X)" src="https://img.shields.io/badge/-Follow-black?style=flat-square&logo=X"></a>
 <br>
 <br>
 </div>
+
 
 # Docker Shared Services
 
@@ -211,9 +213,10 @@ You are more than welcome. Before contributing, kindly check our [contribution g
 * **Discord:** Join our community on [Discord](https://discord.gg/CE3TcCC5vr).
 
 <p align="left">
-    <a href="https://discord.gg/CE3TcCC5vr" target="_blank"><img alt="Codecov" src="https://img.shields.io/discord/1228506758562058391?style=for-the-badge&logo=discord&labelColor=7289d9&logoColor=white&color=39456d"></a>
+    <a href="https://discord.gg/CE3TcCC5vr" target="_blank"><img alt="Discord Link" src="https://img.shields.io/discord/1228506758562058391?style=for-the-badge&logo=discord&labelColor=7289d9&logoColor=white&color=39456d"></a>
     <a href="https://x.com/intent/follow?screen_name=wayofdev" target="_blank"><img alt="Follow on Twitter (X)" src="https://img.shields.io/badge/-Follow-black?style=for-the-badge&logo=X"></a>
 </p>
+
 <br>
 
 ## ⚖️ License
