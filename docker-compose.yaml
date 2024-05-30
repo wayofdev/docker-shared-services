@@ -46,11 +46,11 @@ services:
       start_period: 20s
 
   dns:
-    image: 4km3/dnsmasq:latest
+    image: drpsychick/dnsmasq:latest
     container_name: dnsmasq
     restart: unless-stopped
-    volumes:
-      - ./dnsmasq.conf:/etc/dnsmasq.conf
+    env_file:
+      - .env
     ports:
       - "53:53/tcp"
       - "53:53/udp"
