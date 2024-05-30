@@ -15,16 +15,16 @@ jobs:
 
     steps:
       - name: 📦 Check out the codebase
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
+        uses: actions/checkout@v4.1.6
         with:
           token: ${{ secrets.WORKFLOW_TOKEN }}
 
       - name: ♻️ Sync changes from upstream template
-        uses: AndreasAugustin/actions-template-sync@25d29f2f0b160bd662bfaeff77ea182be35f9d05 # v2.1.0
+        uses: AndreasAugustin/actions-template-sync@v2.2.0
         with:
           github_token: ${{ secrets.WORKFLOW_TOKEN }}
           source_repo_path: wayofdev/docker-shared-services
           upstream_branch: master
-          pr_labels: "type: maintenance"
+          pr_labels: 'type: maintenance'
 
 ...

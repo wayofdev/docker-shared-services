@@ -3,12 +3,18 @@
 # this file is for the labeler workflow job
 # Documentation https://github.com/marketplace/actions/labeler
 
+"type: bug":
+  - head-branch: ['^bug', '^fix', 'bug', 'fix']
+
+"type: enhancement":
+  - head-branch: ['^feature', '^feat', 'feature']
+
 "type: documentation":
-  - assets/**/*
-  - .github/*
-  - ./*.md
+  - changed-files:
+      - any-glob-to-any-file: ['assets/**/*', '.github/*', './*.md']
 
 "type: maintenance":
-  - .github/workflows/*
+  - changed-files:
+      - any-glob-to-any-file: ['goss.yaml', '.github/workflows/*']
 
 ...
