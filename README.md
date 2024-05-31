@@ -20,14 +20,13 @@
 <br>
 </div>
 
-
 # Docker Shared Services
 
 The repository provides Docker-powered local development experience for Dockerized projects, that is compatible with macOS and Linux.
 
 Repository contains a set of docker-compose files and [Træfik](https://traefik.io/) configuration with SSL support, backed by mkcert, to allow running a local network with custom DNS, which enables support for developing microservices locally with access outside the Docker network.
 
-### → Purpose
+## → Purpose
 
 Developers will be familiar with the process of updating their `/etc/hosts` file to direct traffic for `yourproject.docker` or `yourproject.domain.docker` to `127.0.0.1`. Most will also be familiar with the problems of this approach:
 
@@ -46,15 +45,15 @@ If you **like/use** this project, please consider ⭐️ **starring** it. Thanks
 
 ## 🚩 Requirements
 
-* **macOS** Monterey+ or **Linux**
-* **Docker** 26.0 or newer
-  * [How To Install and Use Docker on Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04)
-* Installed [mkcert](https://github.com/FiloSottile/mkcert) binary in system
-  * See full installation instructions in their official [README.md](https://github.com/FiloSottile/mkcert)
-  * Quick installation on macOS: `brew install mkcert nss`
-* ~~Installed and configured [dnsmasq](https://thekelleys.org.uk/dnsmasq/doc.html) daemon~~
-  * ~~Can be installed and configured automatically via our [ansible-role-dnsmasq](https://github.com/wayofdev/ansible-role-dnsmasq) ansible role~~
-  * [DNSMasq](https://thekelleys.org.uk/dnsmasq/doc.html) service now is shipped and configured with this repository.
+- **macOS** Monterey+ or **Linux**
+- **Docker** 26.0 or newer
+  - [How To Install and Use Docker on Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04)
+- Installed [mkcert](https://github.com/FiloSottile/mkcert) binary in system
+  - See full installation instructions in their official [README.md](https://github.com/FiloSottile/mkcert)
+  - Quick installation on macOS: `brew install mkcert nss`
+- ~~Installed and configured [dnsmasq](https://thekelleys.org.uk/dnsmasq/doc.html) daemon~~
+  - ~~Can be installed and configured automatically via our [ansible-role-dnsmasq](https://github.com/wayofdev/ansible-role-dnsmasq) ansible role~~
+  - [DNSMasq](https://thekelleys.org.uk/dnsmasq/doc.html) service now is shipped and configured with this repository.
 
 <br>
 
@@ -65,13 +64,13 @@ If you **like/use** this project, please consider ⭐️ **starring** it. Thanks
 1. Clone repository:
 
    ```bash
-   $ git clone git@github.com:wayofdev/docker-shared-services.git
+   git clone git@github.com:wayofdev/docker-shared-services.git
    ```
 
 2. Generate default .env file:
 
    ```bash
-   $ make env
+   make env
    ```
 
    Edit the created `.env` file if necessary. You may want to change the default domain.
@@ -80,7 +79,7 @@ If you **like/use** this project, please consider ⭐️ **starring** it. Thanks
 
 ## 💻 Usage
 
-### → Running with a blank shared domain segment:
+### → Running with a blank shared domain segment
 
 Leave the `SHARED_DOMAIN_SEGMENT` blank to run shared services under the first level domain. For example:
 
@@ -93,20 +92,20 @@ Leave the `SHARED_DOMAIN_SEGMENT` blank to run shared services under the first l
 
 <br>
 
-### → Running with a default or custom shared domain segment:
+### → Running with a default or custom shared domain segment
 
 Set the segment to run shared services under a subdomain: `SHARED_DOMAIN_SEGMENT=.wod`. Services will run under that segment. For example:
 
    | Address                 |
    |-------------------------|
-   | router.__wod__.docker   |
-   | pg-admin.__wod__.docker |
-   | ui.__wod__.docker       |
+   | router.**wod**.docker   |
+   | pg-admin.**wod**.docker |
+   | ui.**wod**.docker       |
    | etc.                    |
 
 <br>
 
-### → SSL certificates:
+### → SSL certificates
 
 Don't forget to include first level domains into the `TLS_DOMAINS` variable. Default certificates will be created for these domains and wildcards:
 
@@ -120,31 +119,31 @@ Don't forget to include first level domains into the `TLS_DOMAINS` variable. Def
 
 <br>
 
-### → Finishing:
+### → Finishing
 
 1. Install root certificate into system and generate default certs:
 
    ```bash
-   $ make cert-install
+   make cert-install
    ```
 
 2. (Optional) Enable docker-compose.override file to run extra services, like pg-admin and others:
 
    ```bash
-   $ make override
+   make override
    ```
 
 3. Run this repository:
 
    ```bash
-   $ make up
+   make up
    ```
 
 4. Check that everything works:
 
    ```bash
-   $ make ps
-   $ make logs
+   make ps
+   make logs
    ```
 
 <br>
@@ -157,9 +156,9 @@ Services will be running under shared docker network, called `ss_shared_network`
 
 ![Traefik dashboard](.github/assets/traefik.png?raw=true "Traefik dashboard example")
 
-**Portrainer** — https://ui.wod.docker or https://ui.docker
+**Portrainer** — <https://ui.wod.docker> or <https://ui.docker>
 
-**Pg-admin** (if `docker-compose.override.yaml` was enabled) — https://pg-admin.wod.docker or https://pg-admin.docker
+**Pg-admin** (if `docker-compose.override.yaml` was enabled) — <https://pg-admin.wod.docker> or <https://pg-admin.docker>
 
 <br>
 
@@ -170,7 +169,7 @@ You can check `Makefile` to get full list of commands for local testing. For tes
 Testing docker-compose using `dcgoss`:
 
 ```bash
-$ make test
+make test
 ```
 
 <br>
@@ -185,10 +184,10 @@ This project has a [security policy](.github/SECURITY.md).
 
 Thank you for considering contributing to the wayofdev community! We are open to all kinds of contributions. If you want to:
 
-* 🤔 [Suggest a feature](https://github.com/wayofdev/docker-shared-services/issues/new?assignees=&labels=type%3A+enhancement&projects=&template=2-feature-request.yml&title=%5BFeature%5D%3A+)
-* 🐛 [Report an issue](https://github.com/wayofdev/docker-shared-services/issues/new?assignees=&labels=type%3A+documentation%2Ctype%3A+maintenance&projects=&template=1-bug-report.yml&title=%5BBug%5D%3A+)
-* 📖 [Improve documentation](https://github.com/wayofdev/docker-shared-services/issues/new?assignees=&labels=type%3A+documentation%2Ctype%3A+maintenance&projects=&template=4-docs-bug-report.yml&title=%5BDocs%5D%3A+)
-* 👨‍💻 Contribute to the code
+- 🤔 [Suggest a feature](https://github.com/wayofdev/docker-shared-services/issues/new?assignees=&labels=type%3A+enhancement&projects=&template=2-feature-request.yml&title=%5BFeature%5D%3A+)
+- 🐛 [Report an issue](https://github.com/wayofdev/docker-shared-services/issues/new?assignees=&labels=type%3A+documentation%2Ctype%3A+maintenance&projects=&template=1-bug-report.yml&title=%5BBug%5D%3A+)
+- 📖 [Improve documentation](https://github.com/wayofdev/docker-shared-services/issues/new?assignees=&labels=type%3A+documentation%2Ctype%3A+maintenance&projects=&template=4-docs-bug-report.yml&title=%5BDocs%5D%3A+)
+- 👨‍💻 Contribute to the code
 
 You are more than welcome. Before contributing, kindly check our [contribution guidelines](.github/CONTRIBUTING.md).
 
@@ -209,8 +208,8 @@ You are more than welcome. Before contributing, kindly check our [contribution g
 
 ## 🌐 Social Links
 
-* **Twitter:** Follow our organization [@wayofdev](https://twitter.com/intent/follow?screen_name=wayofdev) and the author [@wlotyp](https://twitter.com/intent/follow?screen_name=wlotyp).
-* **Discord:** Join our community on [Discord](https://discord.gg/CE3TcCC5vr).
+- **Twitter:** Follow our organization [@wayofdev](https://twitter.com/intent/follow?screen_name=wayofdev) and the author [@wlotyp](https://twitter.com/intent/follow?screen_name=wlotyp).
+- **Discord:** Join our community on [Discord](https://discord.gg/CE3TcCC5vr).
 
 <p align="left">
     <a href="https://discord.gg/CE3TcCC5vr" target="_blank"><img alt="Discord Link" src="https://img.shields.io/discord/1228506758562058391?style=for-the-badge&logo=discord&labelColor=7289d9&logoColor=white&color=39456d"></a>
