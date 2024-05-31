@@ -20,15 +20,17 @@ name: 🔍 Continuous integration
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
     steps:
       - name: 📦 Install goss
         uses: e1himself/goss-installation-action@v1.2.1
 
       - name: 📦 Check out the codebase
-        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
+        uses: actions/checkout@v4.1.6
         with:
           fetch-depth: 0
 

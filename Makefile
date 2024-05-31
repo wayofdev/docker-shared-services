@@ -129,8 +129,8 @@ cert-install: ## Run mkcert to install CA into system storage and generate defau
 	bash mkcert.sh
 .PHONY: cert-install
 
-
-# Docker and Docker compose Actions
+#
+# Docker Actions
 # ------------------------------------------------------------------------------------
 up: ## Fire up project
 	$(DOCKER_COMPOSE) up --remove-orphans -d
@@ -192,12 +192,20 @@ lint-md-dry: ## Lint all markdown files using markdownlint-cli2 in dry-run mode
 	@$(MARKDOWN_LINT_RUNNER) "**/*.md" "!CHANGELOG.md" | tee -a $(MAKE_LOGFILE)
 .PHONY: lint-md-dry
 
-
-
-
+#
 # Testing
 # ------------------------------------------------------------------------------------
-# dcgoss binary is used for testing — https://github.com/aelsabbahy/goss/tree/master/extras/dcgoss
+# dcgoss binary is used for testing
+# README: https://github.com/aelsabbahy/goss/tree/master/extras/dcgoss
+# macOS install: https://github.com/goss-org/goss/tree/master/extras/dgoss#mac-osx
+#
 test: ## Run self-tests using dcgoss
 	dcgoss run router
 .PHONY: test
+
+#
+# Release
+# ------------------------------------------------------------------------------------
+commit:
+	czg commit --config="./.github/.cz.config.js"
+.PHONY: commit
