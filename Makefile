@@ -110,13 +110,15 @@ PHONY: all
 env: ## Generate .env file from example, use `make env force=true`, to force re-create file
 ifeq ($(FORCE),true)
 	@echo "${YELLOW}Force re-creating .env file from example...${RST}"
-	$(ENVSUBST) $(EXPORT_VARS) < ./.env.example > ./.env
+	@# $(ENVSUBST) $(EXPORT_VARS) < ./.env.example > ./.env
+	cp ./.env.example ./.env
 else ifneq ("$(wildcard ./.env)","")
 	@echo ""
 	@echo "${YELLOW}The .env file already exists! Use FORCE=true to re-create.${RST}"
 else
 	@echo "Creating .env file from example"
-	$(ENVSUBST) $(EXPORT_VARS) < ./.env.example > ./.env
+	@# $(ENVSUBST) $(EXPORT_VARS) < ./.env.example > ./.env
+	cp ./.env.example ./.env
 endif
 .PHONY: env
 
