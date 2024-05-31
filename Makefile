@@ -24,7 +24,7 @@ BUILDER_PARAMS ?= $(DOCKER) run --rm -i \
 	--env SHARED_DOMAIN_SEGMENT="$(SHARED_DOMAIN_SEGMENT)"
 
 BUILDER ?= $(BUILDER_PARAMS) $(SUPPORT_IMAGE)
-BUILDER_WIRED ?= $(BUILDER_PARAMS) --network project.$(COMPOSE_PROJECT_NAME) $(SUPPORT_IMAGE)
+BUILDER_WIRED ?= $(BUILDER_PARAMS) --network network.$(COMPOSE_PROJECT_NAME) $(SUPPORT_IMAGE)
 
 # Shorthand envsubst command, executed through build-deps
 ENVSUBST ?= $(BUILDER) envsubst
@@ -133,7 +133,7 @@ cert-install: ## Run mkcert to install CA into system storage and generate defau
 # Docker Actions
 # ------------------------------------------------------------------------------------
 up: ## Fire up project
-	$(DOCKER_COMPOSE) up --remove-orphans -d
+	$(DOCKER_COMPOSE) up --remove-orphans -d --wait
 .PHONY: up
 
 down: ## Stops and destroys running containers
@@ -160,9 +160,12 @@ pull: ## Pull upstream images, specified in docker-compose.yml file
 .PHONY: pull
 
 clean:
-	# $(DOCKER_COMPOSE) down -v
 	$(DOCKER_COMPOSE) rm --force --stop
 .PHONY: clean
+
+prune: ## Stops and removes all containers and volumes
+	$(DOCKER_COMPOSE) down --remove-orphans --volumes
+.PHONY: prune
 
 #
 # Code Quality, Git, Linting

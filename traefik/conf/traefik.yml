@@ -39,4 +39,7 @@ tls:
         certFile: /etc/traefik/cert.pem
         keyFile: /etc/traefik/key.pem
 
+ping:
+  entryPoint: 'web'
+
 ...
