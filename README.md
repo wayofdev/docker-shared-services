@@ -155,7 +155,7 @@ Services will be running under shared docker network, called `ss_shared_network`
 
 **Traefik dashboard** — [https://router.wod.docker](https://router.wod.docker/dashboard/#/)
 
-![Alt text](assets/traefik.png?raw=true "Title")
+![Traefik dashboard](.github/assets/traefik.png?raw=true "Traefik dashboard example")
 
 **Portrainer** — https://ui.wod.docker or https://ui.docker
 
