@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://github.com/wayofdev/docker-shared-services/compare/v1.5.19...v2.0.0) (2024-06-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* bump major version
+
+### Features
+
+* bump major version ([1dd8255](https://github.com/wayofdev/docker-shared-services/commit/1dd8255cd45bb5911ee7e5df4a2874b7269a13aa))
+* use drpsychick/dnsmasq for local dns ([7c318f6](https://github.com/wayofdev/docker-shared-services/commit/7c318f6335a936d0f630de84e7cc8b823bafea2b))
+
+
+### Documentation
+
+* add issue templates, readme updates ([8ced1ec](https://github.com/wayofdev/docker-shared-services/commit/8ced1ec3346cdb5a2b91e8efa8e77d14449ebb5e))
+* update readme.md ([f11be7f](https://github.com/wayofdev/docker-shared-services/commit/f11be7fd345ea89596f221a9dcff57000c0a9c93))
+
 ## [1.5.19](https://github.com/wayofdev/docker-shared-services/compare/v1.5.18...v1.5.19) (2023-12-01)
 
 
