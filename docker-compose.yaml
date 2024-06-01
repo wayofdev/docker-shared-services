@@ -1,15 +1,13 @@
 ---
 
-version: '3.9'
-
 services:
   router:
     image: traefik:v3.0.1
     container_name: router
     restart: on-failure
     ports:
-      - "80:80"
-      - "443:443"
+      - '80:80'
+      - '443:443'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./traefik/conf/traefik.yml:/etc/traefik/traefik.yml
@@ -21,17 +19,23 @@ services:
       - traefik.http.routers.router.entrypoints=websecure
       - traefik.http.services.router.loadbalancer.server.port=8080
       - traefik.http.routers.router.tls=true
+    healthcheck:
+      test: ['CMD-SHELL', 'traefik healthcheck --ping']
+      interval: 4s
+      timeout: 4s
+      retries: 8
+      start_period: 4s
 
   ui:
     image: portainer/portainer-ce:2.20.3-alpine
     container_name: ui
     restart: on-failure
     ports:
-      - "9000"
+      - '9000'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ui_data:/data
-    command: "-H unix:///var/run/docker.sock"
+    command: '-H unix:///var/run/docker.sock'
     labels:
       - traefik.enable=true
       - traefik.http.routers.ui.rule=Host(`ui${SHARED_DOMAIN_SEGMENT}.docker`)
@@ -39,11 +43,11 @@ services:
       - traefik.http.services.ui.loadbalancer.server.port=9000
       - traefik.http.routers.ui.tls=true
     healthcheck:
-      test: "wget --no-verbose --tries=1 --spider --no-check-certificate http://localhost:9000 || exit 1"
-      interval: 60s
-      timeout: 5s
-      retries: 3
-      start_period: 20s
+      test: 'wget -q --no-verbose --tries=3 --spider --no-check-certificate http://127.0.0.1:9000/api/system/status || exit 1'
+      interval: 4s
+      timeout: 4s
+      retries: 8
+      start_period: 4s
 
   dns:
     image: drpsychick/dnsmasq:latest
@@ -52,17 +56,23 @@ services:
     env_file:
       - .env
     ports:
-      - "53:53/tcp"
-      - "53:53/udp"
+      - '53:53/tcp'
+      - '53:53/udp'
     cap_add:
       - NET_ADMIN
+    healthcheck:
+      test: ['CMD-SHELL', 'nslookup localhost 127.0.0.1 || exit 1']
+      interval: 4s
+      timeout: 4s
+      retries: 8
+      start_period: 4s
 
 networks:
   default:
     name: network.${COMPOSE_PROJECT_NAME}
     ipam:
       config:
-        - subnet: 172.100.61.1/24
+        - subnet: 172.100.61.0/24
 
 volumes:
   ui_data:

@@ -24,7 +24,7 @@ BUILDER_PARAMS ?= $(DOCKER) run --rm -i \
 	--env SHARED_DOMAIN_SEGMENT="$(SHARED_DOMAIN_SEGMENT)"
 
 BUILDER ?= $(BUILDER_PARAMS) $(SUPPORT_IMAGE)
-BUILDER_WIRED ?= $(BUILDER_PARAMS) --network project.$(COMPOSE_PROJECT_NAME) $(SUPPORT_IMAGE)
+BUILDER_WIRED ?= $(BUILDER_PARAMS) --network network.$(COMPOSE_PROJECT_NAME) $(SUPPORT_IMAGE)
 
 # Shorthand envsubst command, executed through build-deps
 ENVSUBST ?= $(BUILDER) envsubst
@@ -110,13 +110,15 @@ PHONY: all
 env: ## Generate .env file from example, use `make env force=true`, to force re-create file
 ifeq ($(FORCE),true)
 	@echo "${YELLOW}Force re-creating .env file from example...${RST}"
-	$(ENVSUBST) $(EXPORT_VARS) < ./.env.example > ./.env
+	@# $(ENVSUBST) $(EXPORT_VARS) < ./.env.example > ./.env
+	cp ./.env.example ./.env
 else ifneq ("$(wildcard ./.env)","")
 	@echo ""
 	@echo "${YELLOW}The .env file already exists! Use FORCE=true to re-create.${RST}"
 else
 	@echo "Creating .env file from example"
-	$(ENVSUBST) $(EXPORT_VARS) < ./.env.example > ./.env
+	@# $(ENVSUBST) $(EXPORT_VARS) < ./.env.example > ./.env
+	cp ./.env.example ./.env
 endif
 .PHONY: env
 
@@ -133,7 +135,7 @@ cert-install: ## Run mkcert to install CA into system storage and generate defau
 # Docker Actions
 # ------------------------------------------------------------------------------------
 up: ## Fire up project
-	$(DOCKER_COMPOSE) up --remove-orphans -d
+	$(DOCKER_COMPOSE) up --remove-orphans -d --wait
 .PHONY: up
 
 down: ## Stops and destroys running containers
@@ -160,9 +162,12 @@ pull: ## Pull upstream images, specified in docker-compose.yml file
 .PHONY: pull
 
 clean:
-	# $(DOCKER_COMPOSE) down -v
 	$(DOCKER_COMPOSE) rm --force --stop
 .PHONY: clean
+
+prune: ## Stops and removes all containers and volumes
+	$(DOCKER_COMPOSE) down --remove-orphans --volumes
+.PHONY: prune
 
 #
 # Code Quality, Git, Linting
