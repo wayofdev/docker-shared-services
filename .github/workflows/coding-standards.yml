@@ -1,0 +1,68 @@
+---
+
+on:  # yamllint disable-line rule:truthy
+  pull_request:
+    branches:
+      - master
+
+name: 🧹 Fix coding standards
+
+jobs:
+  commit-linting:
+    timeout-minutes: 4
+    runs-on: ubuntu-latest
+    concurrency:
+      cancel-in-progress: true
+      group: commit-linting-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - name: 📦 Check out the codebase
+        uses: actions/checkout@v4.1.6
+
+      - name: 🧐 Lint commits using "commitlint"
+        uses: wagoid/commitlint-github-action@v6.0.1
+        with:
+          configFile: ${{ github.workspace }}/.github/.commitlint.config.mjs
+          failOnWarnings: false
+          failOnErrors: true
+          helpURL: 'https://github.com/conventional-changelog/commitlint/#what-is-commitlint'
+
+  yaml-linting:
+    timeout-minutes: 4
+    runs-on: ubuntu-latest
+    concurrency:
+      cancel-in-progress: true
+      group: yaml-linting-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - name: 📦 Check out the codebase
+        uses: actions/checkout@v4.1.6
+
+      - name: 🧐 Lint YAML files
+        uses: ibiqlik/action-yamllint@v3.1.1
+        with:
+          config_file: .github/.yamllint.yaml
+          file_or_dir: '.'
+          strict: true
+
+  markdown-linting:
+    timeout-minutes: 4
+    runs-on: ubuntu-latest
+    concurrency:
+      cancel-in-progress: true
+      group: markdown-linting-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+    steps:
+      - name: 📦 Check out the codebase
+        uses: actions/checkout@v4.1.6
+
+      - name: 🧐 Lint Markdown files
+        uses: DavidAnson/markdownlint-cli2-action@v16.0.0
+        with:
+          config: '.github/.markdownlint.json'
+          globs: |
+            **/*.md
+            !CHANGELOG.md
