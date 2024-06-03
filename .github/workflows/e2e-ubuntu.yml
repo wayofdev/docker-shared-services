@@ -1,0 +1,63 @@
+---
+
+on:  # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - 'master'
+  pull_request:
+    branches:
+      - 'master'
+
+name: 🧪 End-to-end testing (Ubuntu)
+
+jobs:
+  build:
+    #
+    # The job will always be skipped due to the condition
+    # Temporarily disable this job due to port 53 conflict with dnsmasq
+    if: false
+    #
+    timeout-minutes: 8
+    runs-on: ubuntu-latest
+    # Job steps will be run against this container, instead of host.
+    # This tries to resolve problem with 53 port already bound on host runner machine.
+    # More info:
+    # https://docs.github.com/en/actions/using-jobs/running-jobs-in-a-container
+    container:
+      image: ubuntu:latest
+      options: --privileged
+    steps:
+      - name: 📦 Check out the codebase
+        uses: actions/checkout@v4.1.6
+
+      - name: 🐳 Set up Docker
+        run: |
+          apt update
+          apt install -y curl make apt-utils net-tools procps iproute2 iputils-ping
+          curl -fsSL https://get.docker.com -o get-docker.sh
+          sh get-docker.sh
+
+      - name: 🌎 Generate .env file
+        run: make env
+
+      - name: 🏗️ Start docker-compose services
+        run: |
+          make up
+
+      - name: 🧪 Test DNS Resolver with dig
+        run: |
+          if ! dig @127.0.0.1 -p 53 any-domain.docker +short; then
+            echo "DNS resolution failed!"
+            exit 1
+          fi
+
+      - name: 🧪 Test DNS resolver with ping
+        run: |
+          if ! ping -c 3 any-domain.docker; then
+            echo "Ping test failed!"
+            exit 1
+          fi
+
+      - name: ⚙️ Stop docker-compose services
+        if: always()
+        run: make down
