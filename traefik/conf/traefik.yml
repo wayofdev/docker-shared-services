@@ -6,7 +6,7 @@ global:
 providers:
   docker:
     exposedByDefault: false
-    network: ss_network
+    network: network.ss
   file:
     directory: /etc/traefik
     watch: true
