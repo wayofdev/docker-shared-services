@@ -79,7 +79,7 @@ If you **like/use** this project, please consider ⭐️ **starring** it. Thanks
 
 ## 🚀 Quick Start (macOS)
 
-1. Install Homebrew (**optional** if not installed):
+1. **Install Homebrew (if not installed):**
 
    ```bash
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -178,7 +178,7 @@ Your project should use the shared Docker network `network.ss` and Traefik label
 services:
   web:
     image: wayofdev/nginx:k8s-alpine-latest
-    container_name: ${COMPOSE_PROJECT_NAME}-web
+    container_name: laravel-starter-tpl-web
     restart: on-failure
 +   networks:
 +     - default
@@ -192,10 +192,10 @@ services:
       - ./.env:/app/.env
 +   labels:
 +     - traefik.enable=true
-+     - traefik.http.routers.api-${COMPOSE_PROJECT_NAME}-secure.rule=Host(`api.${COMPOSE_PROJECT_NAME}.docker`)
-+     - traefik.http.routers.api-${COMPOSE_PROJECT_NAME}-secure.entrypoints=websecure
-+     - traefik.http.routers.api-${COMPOSE_PROJECT_NAME}-secure.tls=true
-+     - traefik.http.services.api-${COMPOSE_PROJECT_NAME}-secure.loadbalancer.server.port=8880
++     - traefik.http.routers.api-laravel-starter-tpl-secure.rule=Host(`api.laravel-starter-tpl.docker`)
++     - traefik.http.routers.api-laravel-starter-tpl-secure.entrypoints=websecure
++     - traefik.http.routers.api-laravel-starter-tpl-secure.tls=true
++     - traefik.http.services.api-laravel-starter-tpl-secure.loadbalancer.server.port=8880
 +     - traefik.docker.network=network.ss
 
 networks:
