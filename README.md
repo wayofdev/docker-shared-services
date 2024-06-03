@@ -77,23 +77,59 @@ If you **like/use** this project, please consider ⭐️ **starring** it. Thanks
 
 <br>
 
-## ⚙️ Configuration
+## 🚀 Quick Start (macOS)
 
-### → Cloning and setting up envs
-
-1. Clone repository:
+1. Install Homebrew (**optional** if not installed):
 
    ```bash
-   git clone git@github.com:wayofdev/docker-shared-services.git
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
 
-2. Generate default .env file:
+2. **Install `mkcert` and `nss`:**
+
+   `mkcert` is a tool that creates locally-trusted development certificates, `nss` provides support of mkcert certificates in macOS.
+
+   ```bash
+   brew install mkcert nss
+   ```
+
+3. **Create shared projects Directory:**
+
+   This repository should be run once per machine, so let's create a shared directory for this project:
+
+   ```bash
+   mkdir -p ~/projects/infra && cd ~/projects/infra
+   ```
+
+4. **Clone this repository:**
+
+   ```bash
+   git clone \
+     git@github.com:wayofdev/docker-shared-services.git \
+     ~/projects/infra/docker-shared-services && \
+   cd ~/projects/infra/docker-shared-services
+   ```
+
+5. **Create `.env` file:**
+
+   Generate a default `.env` file, which contains configuration settings for the project.
 
    ```bash
    make env
    ```
 
-   Edit the created `.env` file if necessary. You may want to change the default domain.
+   Open this file and read the notes inside to make any necessary changes to fit your setup.
+
+6. **Install root certificate** and generate default project certs:
+
+   This step installs the root certificate into your system's trust store and generates default SSL certificates for your local domains, which are listed in the `.env` file, under variable `TLS_DOMAINS`.
+
+   ```bash
+   make cert-install
+   ```
+
+   Currently, on macOS you may need to enter password several times to allow mkcert to install root certificate.
+   This is a one-time operation and details can be found in this upstream [issue](https://github.com/FiloSottile/mkcert/issues/415).
 
 <br>
 
