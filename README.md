@@ -131,101 +131,80 @@ If you **like/use** this project, please consider ⭐️ **starring** it. Thanks
    Currently, on macOS you may need to enter password several times to allow mkcert to install root certificate.
    This is a one-time operation and details can be found in this upstream [issue](https://github.com/FiloSottile/mkcert/issues/415).
 
-<br>
+7. **Run this project:**
 
-## 💻 Usage
-
-### → Running with a blank shared domain segment
-
-Leave the `SHARED_DOMAIN_SEGMENT` blank to run shared services under the first level domain. For example:
-
-   | Address         |
-   |-----------------|
-   | router.docker   |
-   | pg-admin.docker |
-   | ui.docker       |
-   | etc.            |
-
-<br>
-
-### → Running with a default or custom shared domain segment
-
-Set the segment to run shared services under a subdomain: `SHARED_DOMAIN_SEGMENT=.wod`. Services will run under that segment. For example:
-
-   | Address                 |
-   |-------------------------|
-   | router.**wod**.docker   |
-   | pg-admin.**wod**.docker |
-   | ui.**wod**.docker       |
-   | etc.                    |
-
-<br>
-
-### → SSL certificates
-
-Don't forget to include first level domains into the `TLS_DOMAINS` variable. Default certificates will be created for these domains and wildcards:
-
-| SSL certificate  | Comments                                                                                                    |
-|------------------|-------------------------------------------------------------------------------------------------------------|
-| ui.docker        | Included as fallback, if `SHARED_DOMAIN_SEGMENT` was left blank.                                            |
-| router.docker    | Included as fallback, if `SHARED_DOMAIN_SEGMENT` was left blank.                                            |
-| pg-admin.docker  | Included as fallback, if `SHARED_DOMAIN_SEGMENT` was left blank.                                            |
-| *.wod.docker     | All subdomains under this wildcard. **Only one level of nesting **will work in most of the browsers****.    |
-| *.tpl.wod.docker | For default template, generated from [laravel-starter-tpl](https://github.com/wayofdev/laravel-starter-tpl) |
-
-<br>
-
-### → Finishing
-
-1. Install root certificate into system and generate default certs:
-
-   ```bash
-   make cert-install
-   ```
-
-2. (Optional) Enable docker-compose.override file to run extra services, like pg-admin and others:
-
-   ```bash
-   make override
-   ```
-
-3. Run this repository:
+   Start the Docker services defined in the repository.
 
    ```bash
    make up
    ```
 
-4. Check that everything works:
+8. **Check that all Docker services are running:**
 
    ```bash
    make ps
    make logs
    ```
 
+9. **Ping `router.docker` to check if DNS is working:**
+
+   Ensure that the DNS setup is functioning correctly.
+
+   ```bash
+   ping router.docker
+   ```
+
+10. **Access Traefik dashboard:**
+
+    Open [https://router.docker](https://router.docker)
+
+At this point, you should have a working local development environment with DNS and SSL support for your projects.
+
 <br>
 
-### → Outcome
+## ⚡️ Connecting your Projects to Shared Services
 
-Services will be running under shared docker network, called `ss_shared_network` and all microservices, that will share same network, will be visible for Traefik, and local DNS, served by dnsmasq, will be available.
+To connect your projects to the shared services, configure your project's `docker-compose.yaml` file to connect to the shared network and Traefik.
 
-**Traefik dashboard** — [https://router.wod.docker](https://router.wod.docker/dashboard/#/)
+For a quick example, you can check this [Laravel Starter Template](https://github.com/wayofdev/laravel-starter-tpl) repository's [docker-compose.yaml](https://github.com/wayofdev/laravel-starter-tpl/blob/develop/docker-compose.yaml) file, which includes a sample configuration for a Laravel project.
 
-![Traefik dashboard](.github/assets/traefik.png?raw=true "Traefik dashboard example")
+### → Sample Configuration
 
-**Portrainer** — <https://ui.wod.docker> or <https://ui.docker>
+Your project should use the shared Docker network `network.ss` and Traefik labels to expose services to the outside world.
 
-**Pg-admin** (if `docker-compose.override.yaml` was enabled) — <https://pg-admin.wod.docker> or <https://pg-admin.docker>
+```diff
+---
 
-<br>
+services:
+  web:
+    image: wayofdev/nginx:k8s-alpine-latest
+    container_name: ${COMPOSE_PROJECT_NAME}-web
+    restart: on-failure
++   networks:
++     - default
++     - shared
+    depends_on:
+      - app
+    links:
+      - app
+    volumes:
+      - ./app:/app:rw,cached
+      - ./.env:/app/.env
++   labels:
++     - traefik.enable=true
++     - traefik.http.routers.api-${COMPOSE_PROJECT_NAME}-secure.rule=Host(`api.${COMPOSE_PROJECT_NAME}.docker`)
++     - traefik.http.routers.api-${COMPOSE_PROJECT_NAME}-secure.entrypoints=websecure
++     - traefik.http.routers.api-${COMPOSE_PROJECT_NAME}-secure.tls=true
++     - traefik.http.services.api-${COMPOSE_PROJECT_NAME}-secure.loadbalancer.server.port=8880
++     - traefik.docker.network=network.ss
 
-## 🧪 Testing
+networks:
++ shared:
++   external: true
++   name: network.ss
++ default:
++   name: project.laravel-starter-tpl
 
-You can check `Makefile` to get full list of commands for local testing. For testing, you can use these commands to test whole role or separate tasks:
-
-Testing docker-compose using `dcgoss`:
-
-```bash
-make test
 ```
 
 <br>
