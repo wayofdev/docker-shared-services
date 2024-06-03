@@ -22,20 +22,40 @@
 
 # Docker Shared Services
 
-The repository provides Docker-powered local development experience for Dockerized projects, that is compatible with macOS and Linux.
+This repository provides a Docker-powered local development environment for Dockerized projects, compatible with macOS and Linux.
 
-Repository contains a set of docker-compose files and [Træfik](https://traefik.io/) configuration with SSL support, backed by mkcert, to allow running a local network with custom DNS, which enables support for developing microservices locally with access outside the Docker network.
+It includes a set of docker-compose files and [Træfik](https://traefik.io/) configuration with SSL support, backed by [mkcert](https://github.com/FiloSottile/mkcert), to enable running a local network with custom DNS provided by [dnsmasq](https://thekelleys.org.uk/dnsmasq/doc.html). This setup facilitates developing microservices locally with access outside the Docker network.
 
 ## → Purpose
 
-Developers will be familiar with the process of updating their `/etc/hosts` file to direct traffic for `yourproject.docker` or `yourproject.domain.docker` to `127.0.0.1`. Most will also be familiar with the problems of this approach:
+**Simplifying Local Development**
 
-- it requires a configuration change every time you add or remove a project; and
-- it requires administration access to make the change.
+Developers often update their `/etc/hosts` file to direct traffic for `yourproject.docker` or `yourproject.domain.docker` to `127.0.0.1`. This approach has several drawbacks:
 
-For **Linux** and **macOS** users there is a solution – **dnsmasq**, which replaces the need for you, to edit the hosts file for each project you work with. Dnsmasq works good together with [Traefik](https://traefik.io/), mkcert and **Docker**.
+- Requires a configuration change every time you add or remove a project.
+- Necessitates administrative access to make these changes.
+- No SSL support for these domains.
+- Requires forwarding Docker service ports to the host machine, leading to conflicts when multiple services use the same ports (80 or 443).
+- Forces users to use cumbersome hostnames like `localhost:8800` for local projects.
 
-This repository configures Traefik to run together with, installed in system, dnsmasq and serve you system-wide DNS solution to work with your microservices and use DNS and SSL features with local domains.
+For **Linux** and **macOS** users, **dnsmasq** provides a solution by eliminating the need to edit the hosts file for each project. Dnsmasq works well with [Traefik](https://traefik.io/), [mkcert](https://github.com/FiloSottile/mkcert), and **Docker**.
+
+This repository configures Traefik to work with dnsmasq, providing a system-wide DNS solution for your microservices and enabling DNS and SSL features with local domains.
+
+## → Benefits for Your Team
+
+**Enhance Development Workflow**
+
+Integrating this Docker Shared Services project into your team's tech stack can significantly enhance your development workflow. This setup is compatible with a wide range of HTTP-based projects, including backend frameworks like Laravel, Symfony, or Spiral, frontend frameworks, and any other services that run in Docker and communicate over HTTP.
+
+By standardizing the local network setup across different machines, your team can:
+
+- Maintain consistency
+- Reduce configuration work
+- Resolve port conflicts
+- Provide SSL support for local domains
+
+This ensures smoother collaboration and boosts overall productivity.
 
 <br>
 
