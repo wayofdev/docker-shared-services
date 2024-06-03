@@ -1,0 +1,53 @@
+---
+
+on:  # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - 'master'
+  pull_request:
+    branches:
+      - 'master'
+
+name: 🧪 End-to-end testing (macOS)
+
+jobs:
+  build:
+    #
+    # The job will always be skipped due to the condition
+    # Temporarily disable this job due to port 53 conflict with dnsmasq
+    if: false
+    #
+    timeout-minutes: 16
+    runs-on: macos-13
+    steps:
+      - name: 📦 Check out the codebase
+        uses: actions/checkout@v4.1.6
+
+      - name: 🚀 Install Docker
+        uses: douglascamata/setup-docker-macos-action@v1-alpha.13
+        with:
+          upgrade-qemu: true
+
+      - name: 🌎 Generate .env file
+        run: make env
+
+      - name: 🏗️ Start docker-compose services
+        run: make up
+
+      - name: 🧪 Test DNS Resolver with dig
+        run: |
+          if ! dig @127.0.0.1 -p 53 any-domain.docker +short; then
+            echo "DNS resolution failed!"
+            exit 1
+          fi
+
+      - name: 🧪 Test DNS resolver with ping
+        run: |
+          if ! ping -c 3 any-domain.docker; then
+            echo "Ping test failed!"
+            exit 1
+          fi
+
+      - name: ⚙️ Stop docker-compose services
+        if: always()
+        run: make down

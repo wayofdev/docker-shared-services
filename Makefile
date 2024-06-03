@@ -138,6 +138,14 @@ up: ## Fire up project
 	$(DOCKER_COMPOSE) up --remove-orphans -d --wait
 .PHONY: up
 
+up-router: ## Start only traefik service
+	$(DOCKER_COMPOSE) up --remove-orphans -d --no-deps router --wait
+.PHONY: up-router
+
+up-dns: ## Start only dns service
+	$(DOCKER_COMPOSE) up --remove-orphans -d --no-deps dns --wait
+.PHONY: up-dns
+
 down: ## Stops and destroys running containers
 	$(DOCKER_COMPOSE) down --remove-orphans
 .PHONY: down
