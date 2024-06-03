@@ -75,6 +75,7 @@ Our project employs [GitHub Actions](https://github.com/features/actions) for co
 
 - [`workflows/apply-labels.yml`](workflows/apply-labels.yml)
 - [`workflows/auto-merge-release.yml`](workflows/auto-merge-release.yml)
+- [`workflows/coding-standards.yml`](workflows/coding-standards.yml)
 - [`workflows/create-release.yml`](workflows/create-release.yml)
 - [`workflows/e2e-macos.yml`](workflows/e2e-macos.yml) — **Currently disabled**
 - [`workflows/e2e-ubuntu.yml`](workflows/e2e-ubuntu.yml) — **Currently disabled**
