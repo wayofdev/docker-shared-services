@@ -164,7 +164,7 @@ make lint-md
 
 ## 🧪 Tests
 
-We use [`dgoss`](https://github.com/goss-org/goss/blob/master/extras/dgoss/README.md) and [`dcgoss`](https://github.com/goss-org/goss/blob/master/extras/dcgoss/README.md) to test Docker images and docker-compsoe files.
+We use [`dgoss`](https://github.com/goss-org/goss/blob/master/extras/dgoss/README.md) and [`dcgoss`](https://github.com/goss-org/goss/blob/master/extras/dcgoss/README.md) to test Docker images and `docker-compose` files.
 
 Run
 
