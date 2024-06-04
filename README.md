@@ -158,7 +158,11 @@ If you **like/use** this project, please consider ⭐️ **starring** it. Thanks
 
     Open [https://router.docker](https://router.docker)
 
+### → Outcome
+
 At this point, you should have a working local development environment with DNS and SSL support for your projects.
+
+Services will be running under shared docker network, called `network.ss` and all projects or microservices, that will share same [Docker network](https://docs.docker.com/network/), will be visible for Traefik, and local DNS, served by DNSMasq, will be available on `*.docker` domains.
 
 <br>
 
