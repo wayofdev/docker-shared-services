@@ -104,7 +104,7 @@ help:
 all: hooks env up
 PHONY: all
 
-
+#
 # System Actions
 # ------------------------------------------------------------------------------------
 env: ## Generate .env file from example, use `make env force=true`, to force re-create file
@@ -219,6 +219,6 @@ test: ## Run self-tests using dcgoss
 #
 # Release
 # ------------------------------------------------------------------------------------
-commit:
+commit: ## Run commitizen to create commit message
 	czg commit --config="./.github/.cz.config.js"
 .PHONY: commit

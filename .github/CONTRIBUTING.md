@@ -73,13 +73,15 @@ Refer to the output of `make help` for a comprehensive list of available command
 
 Our project employs [GitHub Actions](https://github.com/features/actions) for continuous integration, ensuring code quality and reliability. We encourage contributors to review our workflow configurations to understand the CI processes:
 
-- [`workflows/apply-labels.yml`](workflows/apply-labels.yml)
-- [`workflows/auto-merge-release.yml`](workflows/auto-merge-release.yml)
-- [`workflows/coding-standards.yml`](workflows/coding-standards.yml)
-- [`workflows/create-release.yml`](workflows/create-release.yml)
-- [`workflows/e2e-macos.yml`](workflows/e2e-macos.yml) — **Currently disabled**
-- [`workflows/e2e-ubuntu.yml`](workflows/e2e-ubuntu.yml) — **Currently disabled**
-- [`workflows/shellcheck.yml`](workflows/shellcheck.yml)
+| Workflow                                                     | Description                                        |
+|--------------------------------------------------------------|----------------------------------------------------|
+| [`apply-labels.yml`](workflows/apply-labels.yml)             | Auto labels PRs based on rules.                    |
+| [`auto-merge-release.yml`](workflows/auto-merge-release.yml) | Automatically merges release PRs.                  |
+| [`coding-standards.yml`](workflows/coding-standards.yml)     | Checks `yaml`, `md` and commit coding standards.   |
+| [`create-release.yml`](workflows/create-release.yml)         | Creates a new release based on tags.               |
+| [`e2e-macos.yml`](workflows/e2e-macos.yml)                   | End-to-end tests on macOS. **Currently disabled**  |
+| [`e2e-ubuntu.yml`](workflows/e2e-ubuntu.yml)                 | End-to-end tests on Ubuntu. **Currently disabled** |
+| [`shellcheck.yml`](workflows/shellcheck.yml)                 | Lints shell scripts.                               |
 
 <br>
 
@@ -105,21 +107,21 @@ git commit -am 'fix: something has been fixed'
 
 **Allowed Prefixes:**
 
-| Prefix     | Purpose                                                       |
-|------------|---------------------------------------------------------------|
-| `feat`     | Introduces a new feature                                      |
-| `fix`      | Fixes a bug                                                   |
-| `perf`     | Improves performance                                          |
-| `docs`     | Documentation only changes                                    |
-| `style`    | Code style changes (formatting, missing semi-colons, etc.)    |
-| `deps`     | Updates dependencies                                          |
-| `refactor` | Code changes that neither fixes a bug nor adds a feature      |
-| `ci`       | Changes to our CI configuration files and scripts             |
-| `test`     | Adding missing tests or correcting existing tests             |
-| `revert`   | Reverts a previous commit                                     |
-| `build`    | Changes that affect the build system or external dependencies |
-| `chore`    | Other changes that don't modify src or test files             |
-| `security` | A code change that fixes a security issue                     |
+| Prefix      | Purpose                                                       |
+|-------------|---------------------------------------------------------------|
+| `feat:`     | Introduces a new feature                                      |
+| `fix:`      | Fixes a bug                                                   |
+| `perf:`     | Improves performance                                          |
+| `docs:`     | Documentation only changes                                    |
+| `style:`    | Code style changes (formatting, missing semi-colons, etc.)    |
+| `deps:`     | Updates dependencies                                          |
+| `refactor:` | Code changes that neither fixes a bug nor adds a feature      |
+| `ci:`       | Changes to our CI configuration files and scripts             |
+| `test:`     | Adding missing tests or correcting existing tests             |
+| `revert:`   | Reverts a previous commit                                     |
+| `build:`    | Changes that affect the build system or external dependencies |
+| `chore:`    | Other changes that don't modify src or test files             |
+| `security:` | A code change that fixes a security issue                     |
 
 <br>
 
