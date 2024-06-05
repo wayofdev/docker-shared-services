@@ -146,17 +146,27 @@ If you **like/use** this project, please consider ⭐️ **starring** it. Thanks
    make logs
    ```
 
-9. **Ping `router.docker` to check if DNS is working:**
-
-   Ensure that the DNS setup is functioning correctly.
+9. **Add custom DNS resolver to your system:**
 
    ```bash
-   ping router.docker
+   sudo sh -c 'echo "nameserver 127.0.0.1" > /etc/resolver/docker'
+   sudo dscacheutil -flushcache
+   sudo killall -HUP mDNSResponder
    ```
 
-10. **Access Traefik dashboard:**
+10. **Ping `router.docker` to check if DNS is working:**
 
-    Open [https://router.docker](https://router.docker)
+    Ensure that the DNS setup is functioning correctly.
+
+    ```bash
+    ping router.docker
+    ```
+
+11. **Access Traefik dashboard:**
+
+    Open [https://router.docker](https://router.docker).
+
+<br>
 
 ### → Outcome
 
