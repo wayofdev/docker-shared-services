@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.0.1](https://github.com/wayofdev/docker-shared-services/compare/v2.0.0...v2.0.1) (2024-06-05)
+
+
+### Bug Fixes
+
+* traefik network name ([f31b22e](https://github.com/wayofdev/docker-shared-services/commit/f31b22e342bc6cd313bb2cd951b525dd590dceff))
+
+
+### Documentation
+
+* add outcome ([5785297](https://github.com/wayofdev/docker-shared-services/commit/5785297a6fe0c28d8184aee5f429cf3724fc6092))
+* adding more friendly quick-start guide ([12c6fb7](https://github.com/wayofdev/docker-shared-services/commit/12c6fb72143b7ca241b8db6a3f705876a385bc50))
+* clean-up readme ([5bc6f7f](https://github.com/wayofdev/docker-shared-services/commit/5bc6f7f4e574ace5600241ca83814ca08b2f3b35))
+* document custom dns resolver ([6f10366](https://github.com/wayofdev/docker-shared-services/commit/6f1036679de68c229fe7634b7fb9f9b074574877))
+* update contributing ([6f998c6](https://github.com/wayofdev/docker-shared-services/commit/6f998c6c6992d599e20dcb850526e7ca349484c8))
+* update CONTRIBUTING.md guide lines. ([bf1f2d4](https://github.com/wayofdev/docker-shared-services/commit/bf1f2d40e341197fd130045451a3110bfb5d275d))
+* update readme ([ca67c9c](https://github.com/wayofdev/docker-shared-services/commit/ca67c9ca64225b51bf2096ddb95084dde2458f22))
+* update readme ([7f32657](https://github.com/wayofdev/docker-shared-services/commit/7f32657f9dc289a5623b4e9a9735f84bc3e2acf6))
+* updating readme ([d86b21a](https://github.com/wayofdev/docker-shared-services/commit/d86b21a93fd972bd08bb330639c4723f30dc45c2))
+
 ## [2.0.0](https://github.com/wayofdev/docker-shared-services/compare/v1.5.19...v2.0.0) (2024-06-01)
 
 
