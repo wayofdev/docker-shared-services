@@ -12,8 +12,8 @@ Before you begin, you will need to set up your local development environment. He
 
 - **Operating System**: macOS Monterey+, Linux, or Windows with WSL2.
 - **Docker**: Version 26.0.0 or newer. Installation guides:
-  - [Docker on Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04)
-  - [Docker Desktop on Mac](https://docs.docker.com/desktop/install/mac-install/)
+  - [How To Install and Use Docker on Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04)
+  - [How To Install Docker Desktop on Mac](https://docs.docker.com/desktop/install/mac-install/)
 - **Homebrew** (macOS only): Install via [brew.sh](https://brew.sh/).
 - **mkcert** Install via [brew.sh/formula/mkcert](https://formulae.brew.sh/formula/mkcert#default) or follow their instructions [here](https://github.com/FiloSottile/mkcert?tab=readme-ov-file#installation).
 
@@ -73,15 +73,15 @@ Refer to the output of `make help` for a comprehensive list of available command
 
 Our project employs [GitHub Actions](https://github.com/features/actions) for continuous integration, ensuring code quality and reliability. We encourage contributors to review our workflow configurations to understand the CI processes:
 
-| Workflow                                                     | Description                                        |
-|--------------------------------------------------------------|----------------------------------------------------|
-| [`apply-labels.yml`](workflows/apply-labels.yml)             | Auto labels PRs based on rules.                    |
-| [`auto-merge-release.yml`](workflows/auto-merge-release.yml) | Automatically merges release PRs.                  |
-| [`coding-standards.yml`](workflows/coding-standards.yml)     | Checks `yaml`, `md` and commit coding standards.   |
-| [`create-release.yml`](workflows/create-release.yml)         | Creates a new release based on tags.               |
-| [`e2e-macos.yml`](workflows/e2e-macos.yml)                   | End-to-end tests on macOS. **Currently disabled**  |
-| [`e2e-ubuntu.yml`](workflows/e2e-ubuntu.yml)                 | End-to-end tests on Ubuntu. **Currently disabled** |
-| [`shellcheck.yml`](workflows/shellcheck.yml)                 | Lints shell scripts.                               |
+| Workflow                                                      | Description                                        |
+|---------------------------------------------------------------|----------------------------------------------------|
+| [`apply-labels.yml`](workflows/apply-labels.yml)              | Auto labels PRs based on rules.                    |
+| [`auto-merge-release.yml`](workflows/auto-merge-release.yml)  | Automatically merges release PRs.                  |
+| [`coding-standards.yml`](workflows/coding-standards.yml)      | Checks `yaml`, `md` and commit coding standards.   |
+| [`create-release.yml`](workflows/create-release.yml)          | Creates a new release based on tags.               |
+| [`e2e-macos.yml`](workflows/e2e-macos.yml)                    | End-to-end tests on macOS. **Currently disabled**  |
+| [`e2e-ubuntu.yml`](workflows/e2e-ubuntu.yml)                  | End-to-end tests on Ubuntu. **Currently disabled** |
+| [`shellcheck.yml`](workflows/shellcheck.yml)                  | Lints shell scripts.                               |
 
 <br>
 
