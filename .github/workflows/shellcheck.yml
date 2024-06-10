@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   shellcheck:
-    uses: wayofdev/gh-actions/.github/workflows/shellcheck.yml@v3.1.0
+    uses: wayofdev/gh-actions/.github/workflows/shellcheck.yml@v3.1.1
     with:
       os: ubuntu-latest
       severity: warning
