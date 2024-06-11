@@ -198,37 +198,37 @@ If you **like/use** this project, please consider ⭐️ **starring** it. Thanks
 
 10. **Add custom DNS resolver to your system:**
 
-      This allows macOS to understand that `*.docker` domains should be resolved by a custom resolver via `127.0.0.1`, where our DNSMasq, which runs inside Docker, will handle all DNS requests.
+    This allows macOS to understand that `*.docker` domains should be resolved by a custom resolver via `127.0.0.1`, where our DNSMasq, which runs inside Docker, will handle all DNS requests.
 
-      ```bash
-      sudo sh -c 'echo "nameserver 127.0.0.1" > /etc/resolver/docker'
-      sudo dscacheutil -flushcache
-      sudo killall -HUP mDNSResponder
-      ```
+    ```bash
+    sudo sh -c 'echo "nameserver 127.0.0.1" > /etc/resolver/docker'
+    sudo dscacheutil -flushcache
+    sudo killall -HUP mDNSResponder
+    ```
 
-      You can check that DNS was added by running:
+    You can check that DNS was added by running:
 
-      ```bash
-      scutil --dns
-      ```
+    ```bash
+    scutil --dns
+    ```
 
-      Example output:
+    Example output:
 
-      ```bash
-      resolver #8
-        domain   : docker
-        nameserver[0] : 127.0.0.1
-        flags    : Request A records, Request AAAA records
-        reach    : 0x00030002 (Reachable,Local Address,Directly Reachable Address)
-      ```
+    ```bash
+    resolver #8
+    domain   : docker
+    nameserver[0] : 127.0.0.1
+    flags    : Request A records, Request AAAA records
+    reach    : 0x00030002 (Reachable,Local Address,Directly Reachable Address)
+    ```
 
-      > [!Note]
-      >
-      > Instead of creating the `/etc/resolver/docker` file, you can add `127.0.0.1` to your macOS DNS Servers in your Ethernet or Wi-Fi settings.
-      >
-      > Go to **System Preferences → Network → Wi-Fi → Details → DNS** and add `127.0.0.1` as the first DNS server.
-      >
-      > This allows you to do it one time, and if you need to create a new local domain, for example `*.mac`, in the future, it will be automatically resolved without creating a separate `/etc/resolver/mac` file.
+    > [!Note]
+    >
+    > Instead of creating the `/etc/resolver/docker` file, you can add `127.0.0.1` to your macOS DNS Servers in your Ethernet or Wi-Fi settings.
+    >
+    > Go to **System Preferences → Network → Wi-Fi → Details → DNS** and add `127.0.0.1` as the first DNS server.
+    >
+    > This allows you to do it one time, and if you need to create a new local domain, for example `*.mac`, in the future, it will be automatically resolved without creating a separate `/etc/resolver/mac` file.
 
 11. **Ping `router.docker` to check if DNS is working:**
 
