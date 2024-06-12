@@ -31,6 +31,7 @@ It includes a set of docker-compose files and [Træfik](https://traefik.io/) con
 
 - [Key Features](#-key-features)
 - [Purpose](#-purpose)
+- [Benefits for Team](#-benefits-for-team)
 - [Requirements](#-requirements)
 - [Quick Start Guide (macOS)](#-quick-start-guide-macos)
 - [Quick Start Guide (Linux)](#-quick-start-guide-linux)
