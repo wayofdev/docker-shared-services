@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.0.2](https://github.com/wayofdev/docker-shared-services/compare/v2.0.1...v2.0.2) (2024-06-12)
+
+
+### Bug Fixes
+
+* add check if mkcert is installed ([5697f49](https://github.com/wayofdev/docker-shared-services/commit/5697f49cfeeafa4cc38eae29afb071e05ddb687e))
+
+
+### Documentation
+
+* update readme.md ([1351c1b](https://github.com/wayofdev/docker-shared-services/commit/1351c1b030cf63ee544a7f42e5ba1c77adfb0733))
+* updates to contributing guide ([ded9951](https://github.com/wayofdev/docker-shared-services/commit/ded99519a88e73bc807b379cfcffcc73fd965f7b))
+* updating README.md ([5edfa6d](https://github.com/wayofdev/docker-shared-services/commit/5edfa6db3093afbec9ebf3a80cfd86b68a9d4889))
+
+
+### Dependencies
+
+* **deps:** update andreasaugustin/actions-template-sync action to v2.2.1 ([05f73ec](https://github.com/wayofdev/docker-shared-services/commit/05f73ecfb97ae4a44217fdd05032a01c8cb64578))
+* **deps:** update googleapis/release-please-action action to v4.1.3 ([315dd16](https://github.com/wayofdev/docker-shared-services/commit/315dd16273ea6400f34fe2a11dc0a7a0cf7d4bde))
+* **deps:** update wayofdev/gh-actions action to v3.1.1 ([7450e6a](https://github.com/wayofdev/docker-shared-services/commit/7450e6aeca1ad9efa56554171a5f579fd4c6e2bc))
+
 ## [2.0.1](https://github.com/wayofdev/docker-shared-services/compare/v2.0.0...v2.0.1) (2024-06-05)
 
 
