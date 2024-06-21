@@ -2,7 +2,7 @@
 
 services:
   router:
-    image: traefik:v3.0.2
+    image: traefik:v3.0.3
     container_name: router
     restart: on-failure
     ports:
