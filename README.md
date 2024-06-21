@@ -175,7 +175,7 @@ If you **like/use** this project, please consider ⭐️ **starring** it. Thanks
    make cert-install
    ```
 
-      > [!Note]
+      > [!WARNING]
       >
       > Currently, on macOS, you may need to enter your password several times to allow `mkcert` to install the root certificate.
       > **This is a one-time operation** and details can be found in this upstream GitHub [issue](https://github.com/FiloSottile/mkcert/issues/415).
@@ -223,7 +223,7 @@ If you **like/use** this project, please consider ⭐️ **starring** it. Thanks
     reach    : 0x00030002 (Reachable,Local Address,Directly Reachable Address)
     ```
 
-    > [!Note]
+    > [!NOTE]
     >
     > Instead of creating the `/etc/resolver/docker` file, you can add `127.0.0.1` to your macOS DNS Servers in your Ethernet or Wi-Fi settings.
     >
