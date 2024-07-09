@@ -13,7 +13,7 @@ name: 🧪 End-to-end testing (macOS)
 jobs:
   build:
     timeout-minutes: 16
-    runs-on: macos-13
+    runs-on: macos-14
     steps:
       - name: ‼️ Temporary succeed without check
         run: |
