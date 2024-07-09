@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.3](https://github.com/wayofdev/docker-shared-services/compare/v2.0.2...v2.0.3) (2024-07-04)
+
+
+### Documentation
+
+* readme.md updates ([276caa2](https://github.com/wayofdev/docker-shared-services/commit/276caa2c64bd438428a91948e4dc5866f337aca7))
+
+
+### Dependencies
+
+* **deps:** update actions/checkout action to v4.1.7 ([2f1ede2](https://github.com/wayofdev/docker-shared-services/commit/2f1ede2d88bb5dba5aa045da084ca3c781111e82))
+* **deps:** update andreasaugustin/actions-template-sync action to v2.2.3 ([ab4260a](https://github.com/wayofdev/docker-shared-services/commit/ab4260aba4b1ef4a13ddebe8510fd4156351b28a))
+* **deps:** update traefik docker tag to v3.0.2 ([43cc65e](https://github.com/wayofdev/docker-shared-services/commit/43cc65e6491494fb30a1063c31b7625cac052934))
+* **deps:** update traefik docker tag to v3.0.3 ([57c3bae](https://github.com/wayofdev/docker-shared-services/commit/57c3bae7827105f8fa50d371231542e901b7709c))
+* **deps:** update traefik docker tag to v3.0.4 ([7e9860b](https://github.com/wayofdev/docker-shared-services/commit/7e9860bf70f6a4318e6181c3334acc0b17de04a2))
+
 ## [2.0.2](https://github.com/wayofdev/docker-shared-services/compare/v2.0.1...v2.0.2) (2024-06-12)
 
 
