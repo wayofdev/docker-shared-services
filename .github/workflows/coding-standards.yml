@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4.1.7
 
       - name: 🧐 Lint commits using "commitlint"
-        uses: wagoid/commitlint-github-action@v6.0.1
+        uses: wagoid/commitlint-github-action@v6.2.1
         with:
           configFile: ${{ github.workspace }}/.github/.commitlint.config.mjs
           failOnWarnings: false
