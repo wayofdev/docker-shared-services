@@ -60,7 +60,7 @@ jobs:
         uses: actions/checkout@v4.1.7
 
       - name: 🧐 Lint Markdown files
-        uses: DavidAnson/markdownlint-cli2-action@v16.0.0
+        uses: DavidAnson/markdownlint-cli2-action@v20.0.0
         with:
           config: '.github/.markdownlint.json'
           globs: |
