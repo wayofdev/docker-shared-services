@@ -15,7 +15,7 @@ name: 🤞 Auto merge release
 
 jobs:
   auto-merge:
-    uses: wayofdev/gh-actions/.github/workflows/auto-merge-release.yml@v3.1.1
+    uses: wayofdev/gh-actions/.github/workflows/auto-merge-release.yml@v3.3.0
     with:
       os: ubuntu-latest
       pull-request-number: ${{ github.event.pull_request.number }}
